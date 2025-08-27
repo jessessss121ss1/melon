@@ -23,7 +23,7 @@ const MODELS = {
 // 格式化中文内容为字符串
 function formatChineseContent(chineseObj) {
     if (!chineseObj || typeof chineseObj !== 'object') {
-        return chineseObj || '生成失败';
+        throw new Error('中文内容格式错误：必须是对象类型');
     }
     
     let formatted = '';
@@ -74,12 +74,14 @@ function formatChineseContent(chineseObj) {
 // 格式化目标国家内容为字符串
 function formatTargetCountryContent(targetObj) {
     if (!targetObj || typeof targetObj !== 'object') {
-        return targetObj || '生成失败';
+        throw new Error('目标国家内容格式错误：必须是对象类型');
     }
     
     // 获取第一个国家的数据（通常只有一个）
     const countryData = Object.values(targetObj)[0];
-    if (!countryData || typeof countryData !== 'object') return '生成失败';
+    if (!countryData || typeof countryData !== 'object') {
+        throw new Error('目标国家数据格式错误：缺少有效的国家数据');
+    }
     
     let formatted = '';
     
@@ -239,26 +241,9 @@ app.post('/api/generate-description', async (req, res) => {
                 console.error('JSON解析失败:', parseError.message);
                 console.log('尝试解析的内容:', content);
                 
-                // 如果不是标准JSON格式，尝试从文本中提取内容
-                let chinese = content;
-                let target_country = content;
-                
-                // 尝试简单的文本分割
-                if (content.includes('chinese') && content.includes('target_country')) {
-                    // 如果包含关键词，尝试提取
-                    const chineseMatch = content.match(/chinese["\s]*:["\s]*([^"]+)/i);
-                    const targetMatch = content.match(/target_country["\s]*:["\s]*([^"]+)/i);
-                    
-                    if (chineseMatch) chinese = chineseMatch[1];
-                    if (targetMatch) target_country = targetMatch[1];
-                }
-                
-                res.json({ 
-                    success: true,
-                    chinese: chinese,
-                    target_country: target_country,
-                    model: selectedModel,
-                    parse_error: parseError.message,
+                return res.status(500).json({ 
+                    error: 'AI返回内容格式错误，无法解析JSON',
+                    details: parseError.message,
                     raw_content: content
                 });
             }
@@ -363,13 +348,15 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// 启动服务器
-app.listen(PORT, () => {
-    console.log(`服务器运行在 http://localhost:${PORT}`);
-    console.log('API端点:');
-    console.log('  POST /api/generate-description - 生成商品描述');
-    console.log('  POST /api/translate - AI翻译');
-    console.log('  GET  /api/health - 健康检查');
-});
+// 启动服务器（仅在非 Vercel 环境下）
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`服务器运行在 http://localhost:${PORT}`);
+        console.log('API端点:');
+        console.log('  POST /api/generate-description - 生成商品描述');
+        console.log('  POST /api/translate - AI翻译');
+        console.log('  GET  /api/health - 健康检查');
+    });
+}
 
 module.exports = app;

@@ -75,36 +75,10 @@ class TranslationService {
     }
 
     async translate(text, targetCountry) {
-        if (!text.trim() || !targetCountry) return '';
+        if (!text.trim() || !targetCountry) throw new Error('翻译文本和目标国家不能为空');
 
-        try {
-            // 首先尝试AI翻译（更高质量）
-            return await this.translateWithAI(text, targetCountry);
-        } catch (error) {
-            console.error('AI翻译失败，使用词典翻译:', error);
-            
-            // AI翻译失败时，尝试本地词典翻译
-            const dictionary = this.dictionaries[targetCountry];
-            if (dictionary) {
-                let translated = this.translateWithDictionary(text, dictionary);
-                if (translated !== text) {
-                    return translated;
-                }
-            }
-
-            // 最后尝试在线翻译服务
-            const countryInfo = this.countryInfo[targetCountry];
-            if (countryInfo) {
-                try {
-                    return await this.translateWithAPI(text, countryInfo.code);
-                } catch (apiError) {
-                    console.error('在线翻译也失败:', apiError);
-                    return text;
-                }
-            }
-
-            return text;
-        }
+        // 只使用AI翻译，如果失败就直接抛出错误
+        return await this.translateWithAI(text, targetCountry);
     }
 
     async translateWithAI(text, targetCountry) {
@@ -197,19 +171,9 @@ class DescriptionGenerator {
     }
 
     async generate(productName, productDescription, targetCountry, model = 'deepseek') {
-        if (!productName.trim()) return null;
+        if (!productName.trim()) throw new Error('商品名称不能为空');
 
-        try {
-            return await this.generateWithAPI(productName, productDescription, targetCountry, model);
-        } catch (error) {
-            console.error('AI生成失败，使用模板生成:', error);
-            // AI失败时降级到模板生成
-            const fallbackDesc = this.generateWithTemplate(productName, model);
-            return {
-                chinese: fallbackDesc,
-                target_country: fallbackDesc
-            };
-        }
+        return await this.generateWithAPI(productName, productDescription, targetCountry, model);
     }
 
     async generateWithAPI(productName, productDescription, targetCountry, model) {
@@ -236,9 +200,12 @@ class DescriptionGenerator {
         console.log('API响应数据:', data);
         
         if (data.success) {
+            if (!data.chinese || !data.target_country) {
+                throw new Error('AI生成的内容不完整');
+            }
             return {
-                chinese: data.chinese || '生成失败',
-                target_country: data.target_country || '生成失败',
+                chinese: data.chinese,
+                target_country: data.target_country,
                 raw_content: data.raw_content, // 用于调试
                 parse_error: data.parse_error  // 用于调试
             };
@@ -326,46 +293,27 @@ class ProductTranslatorApp {
             // 使用专业提示词生成商品描述
             const result = await this.generator.generate(productName, productDesc, targetCountry, selectedModel);
             
-            if (result && result.chinese && result.target_country) {
-                // 显示中文结果
-                document.getElementById('chineseName').textContent = productName;
-                document.getElementById('chineseDesc').textContent = result.chinese;
-                
-                // 显示目标国家结果  
-                document.getElementById('translatedName').textContent = productName;
-                document.getElementById('translatedDesc').textContent = result.target_country;
-                
-                console.log('AI生成成功:', result);
-            } else {
-                // 如果生成失败，使用传统流程
-                console.log('AI生成失败，使用传统流程');
-                let chineseName = productName;
-                let chineseDesc = productDesc.trim();
-                
-                // 如果没有输入描述，使用模板生成
-                if (!chineseDesc) {
-                    chineseDesc = this.generator.generateWithTemplate(productName, selectedModel);
-                }
-
-                document.getElementById('chineseName').textContent = chineseName;
-                document.getElementById('chineseDesc').textContent = chineseDesc;
-
-                // 进行翻译
-                const translatedName = await this.translator.translate(chineseName, targetCountry);
-                const translatedDesc = await this.translator.translate(chineseDesc, targetCountry);
-                
-                document.getElementById('translatedName').textContent = translatedName;
-                document.getElementById('translatedDesc').textContent = translatedDesc;
-            }
+            // 显示中文结果
+            document.getElementById('chineseName').textContent = productName;
+            document.getElementById('chineseDesc').textContent = result.chinese;
+            
+            // 显示目标国家结果  
+            document.getElementById('translatedName').textContent = productName;
+            document.getElementById('translatedDesc').textContent = result.target_country;
+            
+            console.log('AI生成成功:', result);
 
         } catch (error) {
             console.error('Generation error:', error);
             
-            // 发生错误时，也显示基础信息
-            document.getElementById('chineseName').textContent = productName;
-            document.getElementById('chineseDesc').textContent = productDesc || '生成失败，请稍后重试';
-            document.getElementById('translatedName').textContent = productName;
-            document.getElementById('translatedDesc').textContent = '生成失败：' + error.message;
+            // 直接显示错误信息，不提供兜底内容
+            alert('生成失败：' + error.message);
+            
+            // 清空所有输出框
+            document.getElementById('chineseName').textContent = '';
+            document.getElementById('chineseDesc').textContent = '';
+            document.getElementById('translatedName').textContent = '';
+            document.getElementById('translatedDesc').textContent = '';
         }
 
         this.showLoading(false);
