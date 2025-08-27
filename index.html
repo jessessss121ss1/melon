@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电商选品工具 - 商品翻译生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <main>
+            <!-- 左栏：输入区域 -->
+            <div class="left-section">
+                <div class="section-header">
+                    <h2>商品信息输入</h2>
+                    <button type="button" id="clearBtn" class="clear-icon-btn" title="清空所有内容">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                        </svg>
+                        <span>清空</span>
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modelSelect">AI模型:</label>
+                    <select id="modelSelect">
+                        <option value="deepseek" selected>DeepSeek</option>
+                        <option value="doubao">豆包 (Doubao)</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="productName">商品名称:</label>
+                    <input type="text" id="productName" placeholder="请输入商品名称">
+                </div>
+
+                <div class="form-group">
+                    <label for="productDesc">商品描述:</label>
+                    <textarea id="productDesc" rows="4" placeholder="请输入商品描述..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="targetCountry">目标销售国家:</label>
+                    <select id="targetCountry">
+                        <option value="">请选择目标国家</option>
+                        <option value="vietnam" selected>越南 (Vietnam)</option>
+                        <option value="thailand">泰国 (Thailand)</option>
+                        <option value="indonesia">印度尼西亚 (Indonesia)</option>
+                        <option value="malaysia">马来西亚 (Malaysia)</option>
+                        <option value="philippines">菲律宾 (Philippines)</option>
+                        <option value="singapore">新加坡 (Singapore)</option>
+                        <option value="cambodia">柬埔寨 (Cambodia)</option>
+                        <option value="laos">老挝 (Laos)</option>
+                        <option value="myanmar">缅甸 (Myanmar)</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="generateBtn">生成描述</button>
+                </div>
+            </div>
+
+            <!-- 中栏：中文结果 -->
+            <div class="middle-section">
+                <h2>生成的中文内容</h2>
+                
+                <div class="result-group">
+                    <label>中文商品标题:</label>
+                    <div id="chineseName" class="output-box"></div>
+                    <button class="copy-btn" onclick="copyToClipboard('chineseName')">复制</button>
+                </div>
+
+                <div class="result-group">
+                    <label>中文商品描述:</label>
+                    <div id="chineseDesc" class="output-box"></div>
+                    <button class="copy-btn" onclick="copyToClipboard('chineseDesc')">复制</button>
+                </div>
+            </div>
+
+            <!-- 右栏：翻译结果 -->
+            <div class="right-section">
+                <h2 id="translateSectionTitle">翻译结果</h2>
+                
+                <div class="result-group">
+                    <label id="translatedNameLabel">翻译后商品名称:</label>
+                    <div id="translatedName" class="output-box"></div>
+                    <button class="copy-btn" onclick="copyToClipboard('translatedName')">复制</button>
+                </div>
+
+                <div class="result-group">
+                    <label id="translatedDescLabel">翻译后商品描述:</label>
+                    <div id="translatedDesc" class="output-box"></div>
+                    <button class="copy-btn" onclick="copyToClipboard('translatedDesc')">复制</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <p>正在处理中...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
