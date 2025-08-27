@@ -397,7 +397,7 @@ class ProductTranslatorApp {
 }
 
 // 复制到剪贴板功能
-function copyToClipboard(elementId) {
+function copyToClipboard(elementId, buttonElement) {
     const element = document.getElementById(elementId);
     const text = element.textContent;
     
@@ -406,21 +406,67 @@ function copyToClipboard(elementId) {
         return;
     }
 
-    navigator.clipboard.writeText(text).then(() => {
-        // 显示复制成功提示
-        const button = event.target;
-        const originalText = button.textContent;
-        button.textContent = '已复制!';
-        button.style.backgroundColor = '#4CAF50';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = '';
-        }, 2000);
-    }).catch(err => {
-        console.error('复制失败:', err);
-        alert('复制失败，请手动选择文本复制');
-    });
+    // 获取按钮元素
+    const button = buttonElement || event.target;
+    const originalText = button.textContent;
+    
+    // 先尝试现代的 Clipboard API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            showCopySuccess(button, originalText);
+        }).catch(err => {
+            console.error('Clipboard API 失败:', err);
+            // 降级到传统方法
+            fallbackCopyToClipboard(text, button, originalText);
+        });
+    } else {
+        // 降级到传统方法
+        fallbackCopyToClipboard(text, button, originalText);
+    }
+}
+
+// 传统复制方法（兼容性更好）
+function fallbackCopyToClipboard(text, button, originalText) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showCopySuccess(button, originalText);
+        } else {
+            showCopyError();
+        }
+    } catch (err) {
+        console.error('传统复制方法也失败:', err);
+        showCopyError();
+    } finally {
+        document.body.removeChild(textArea);
+    }
+}
+
+// 显示复制成功
+function showCopySuccess(button, originalText) {
+    button.textContent = '已复制!';
+    button.style.backgroundColor = '#4CAF50';
+    button.style.color = 'white';
+    
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '';
+        button.style.color = '';
+    }, 2000);
+}
+
+// 显示复制错误
+function showCopyError() {
+    alert('复制失败，请手动选择文本复制');
 }
 
 // 初始化应用
