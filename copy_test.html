@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复制功能测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-box { background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; padding: 16px; margin: 10px 0; }
+        .copy-btn { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 10px; }
+        .copy-btn:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <h1>复制功能测试</h1>
+    
+    <h3>测试1: 短文本</h3>
+    <div id="test1" class="test-box">这是一段短测试文本</div>
+    <button class="copy-btn" onclick="copyToClipboard('test1', this)">复制</button>
+    
+    <h3>测试2: 长文本</h3>
+    <div id="test2" class="test-box">🔥 限时特惠！智能手表新品上市，健康生活从此开始！
+
+🌟 核心卖点：
+1. 24小时心率监测，精准掌握健康状况
+2. 多种运动模式记录，助力科学锻炼
+3. 超长续航，一次充电使用7天
+
+🎯 使用场景：
+1. 运动健身时实时监测心率变化
+2. 日常佩戴记录步数和卡路里消耗
+3. 睡眠时监测睡眠质量</div>
+    <button class="copy-btn" onclick="copyToClipboard('test2', this)">复制</button>
+    
+    <h3>测试3: 空内容</h3>
+    <div id="test3" class="test-box"></div>
+    <button class="copy-btn" onclick="copyToClipboard('test3', this)">复制</button>
+    
+    <script>
+        // 复制到剪贴板功能
+        function copyToClipboard(elementId, buttonElement) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            if (!text.trim()) {
+                alert('没有内容可复制');
+                return;
+            }
+
+            // 获取按钮元素
+            const button = buttonElement || event.target;
+            const originalText = button.textContent;
+            
+            // 先尝试现代的 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopySuccess(button, originalText);
+                }).catch(err => {
+                    console.error('Clipboard API 失败:', err);
+                    // 降级到传统方法
+                    fallbackCopyToClipboard(text, button, originalText);
+                });
+            } else {
+                // 降级到传统方法
+                fallbackCopyToClipboard(text, button, originalText);
+            }
+        }
+
+        // 传统复制方法（兼容性更好）
+        function fallbackCopyToClipboard(text, button, originalText) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(button, originalText);
+                } else {
+                    showCopyError();
+                }
+            } catch (err) {
+                console.error('传统复制方法也失败:', err);
+                showCopyError();
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // 显示复制成功
+        function showCopySuccess(button, originalText) {
+            button.textContent = '已复制!';
+            button.style.backgroundColor = '#4CAF50';
+            button.style.color = 'white';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+                button.style.color = '';
+            }, 2000);
+        }
+
+        // 显示复制错误
+        function showCopyError() {
+            alert('复制失败，请手动选择文本复制');
+        }
+    </script>
+</body>
+</html>

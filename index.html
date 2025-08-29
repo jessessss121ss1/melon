@@ -4,110 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>电商选品工具 - 商品翻译生成器</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        .main-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 24px;
+            height: 700px;
+        }
+
+        .input-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .results-panel {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .result-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-header {
+            background: #f9fafb;
+            padding: 10px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+
+        .copy-button {
+            padding: 6px 10px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .copy-button:hover {
+            background: #2563eb;
+        }
+
+        .copy-button.success {
+            background: #10b981;
+        }
+
+        .result-text {
+            height: 280px;
+            padding: 8px;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            color: #374151;
+            overflow-y: auto;
+            background: white;
+        }
+
+        .result-text:empty::before {
+            content: "等待生成结果...";
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        .generate-section {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+                height: auto;
+            }
+
+            .results-panel {
+                grid-template-rows: auto auto;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="admin-layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">电商选品工具</h1>
+                <p class="sidebar-subtitle">AI驱动的产品描述生成器</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="/" class="nav-item active">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                    商品描述生成
+                </a>
+                <a href="/task-manager.html" class="nav-item">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                    </svg>
+                    任务记录管理
+                </a>
+            </nav>
+        </aside>
 
-        <main>
-            <!-- 左栏：输入区域 -->
-            <div class="left-section">
-                <div class="section-header">
-                    <h2>商品信息输入</h2>
-                    <button type="button" id="clearBtn" class="clear-icon-btn" title="清空所有内容">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 6h18"></path>
-                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="page-title">商品描述生成</h1>
+                    <button class="btn btn-outline" onclick="clearAll()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7"/>
                         </svg>
-                        <span>清空</span>
+                        清空所有
                     </button>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modelSelect">AI模型:</label>
-                    <select id="modelSelect">
-                        <option value="deepseek" selected>DeepSeek</option>
-                        <option value="doubao">豆包 (Doubao)</option>
-                    </select>
-                </div>
+            </header>
 
+            <div class="content-area">
+                <div class="main-layout">
+                    <!-- 左侧：输入区域 -->
+                    <div class="input-panel">
+                        <div class="card" style="flex: 1; display: flex; flex-direction: column;">
+                            <div class="card-header">
+                                <h3 class="card-title">输入信息</h3>
+                            </div>
+                            <div class="card-body" style="flex: 1; display: flex; flex-direction: column;">
+                                <div class="form-grid" style="margin-bottom: 20px;">
+                                    <div class="form-group">
+                                        <label class="form-label" for="modelSelect">AI模型</label>
+                                        <select class="form-select" id="modelSelect">
+                                            <option value="deepseek">DeepSeek</option>
+                                            <option value="doubao">豆包 (Doubao)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="targetCountry">目标销售国家</label>
+                                        <select class="form-select" id="targetCountry">
+                                            <option value="vietnam">越南 (Vietnam)</option>
+                                            <option value="thailand">泰国 (Thailand)</option>
+                                            <option value="indonesia">印度尼西亚 (Indonesia)</option>
+                                            <option value="malaysia">马来西亚 (Malaysia)</option>
+                                            <option value="philippines">菲律宾 (Philippines)</option>
+                                            <option value="singapore">新加坡 (Singapore)</option>
+                                            <option value="cambodia">柬埔寨 (Cambodia)</option>
+                                            <option value="laos">老挝 (Laos)</option>
+                                            <option value="myanmar">缅甸 (Myanmar)</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                <div class="form-group">
-                    <label for="productName">商品名称:</label>
-                    <input type="text" id="productName" placeholder="请输入商品名称">
-                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label class="form-label" for="productName">商品名称</label>
+                                    <input class="form-input" type="text" id="productName" placeholder="请输入商品名称">
+                                </div>
 
-                <div class="form-group">
-                    <label for="productDesc">商品描述:</label>
-                    <textarea id="productDesc" rows="4" placeholder="请输入商品描述..."></textarea>
-                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="productDesc">商品描述</label>
+                                    <textarea class="form-textarea" id="productDesc" placeholder="请输入商品描述（可选）" style="height: 250px; resize: none;"></textarea>
+                                </div>
 
-                <div class="form-group">
-                    <label for="targetCountry">目标销售国家:</label>
-                    <select id="targetCountry">
-                        <option value="">请选择目标国家</option>
-                        <option value="vietnam" selected>越南 (Vietnam)</option>
-                        <option value="thailand">泰国 (Thailand)</option>
-                        <option value="indonesia">印度尼西亚 (Indonesia)</option>
-                        <option value="malaysia">马来西亚 (Malaysia)</option>
-                        <option value="philippines">菲律宾 (Philippines)</option>
-                        <option value="singapore">新加坡 (Singapore)</option>
-                        <option value="cambodia">柬埔寨 (Cambodia)</option>
-                        <option value="laos">老挝 (Laos)</option>
-                        <option value="myanmar">缅甸 (Myanmar)</option>
-                    </select>
-                </div>
+                                <div class="generate-section" style="margin-top: 20px;">
+                                    <button class="btn btn-primary" style="width: 100%; padding: 12px;" type="button" id="generateBtn">
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                        生成商品描述
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="button-group">
-                    <button type="button" id="generateBtn">生成描述</button>
-                </div>
-            </div>
+                    <!-- 右侧：结果区域 -->
+                    <div class="results-panel">
+                        <!-- 中文结果 -->
+                        <div class="result-box">
+                            <div class="result-header">
+                                <span>📝 中文商品描述</span>
+                                <button class="copy-button" onclick="copyContent('chineseDesc', this)">
+                                    <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                    复制
+                                </button>
+                            </div>
+                            <div class="result-text" id="chineseDesc"></div>
+                        </div>
 
-            <!-- 中栏：中文结果 -->
-            <div class="middle-section">
-                <h2>生成的中文内容</h2>
-                
-                <div class="result-group">
-                    <label>中文商品标题:</label>
-                    <div id="chineseName" class="output-box"></div>
-                    <button class="copy-btn" onclick="copyToClipboard('chineseName', this)">复制</button>
-                </div>
-
-                <div class="result-group">
-                    <label>中文商品描述:</label>
-                    <div id="chineseDesc" class="output-box"></div>
-                    <button class="copy-btn" onclick="copyToClipboard('chineseDesc', this)">复制</button>
-                </div>
-            </div>
-
-            <!-- 右栏：翻译结果 -->
-            <div class="right-section">
-                <h2 id="translateSectionTitle">翻译结果</h2>
-                
-                <div class="result-group">
-                    <label id="translatedNameLabel">翻译后商品名称:</label>
-                    <div id="translatedName" class="output-box"></div>
-                    <button class="copy-btn" onclick="copyToClipboard('translatedName', this)">复制</button>
-                </div>
-
-                <div class="result-group">
-                    <label id="translatedDescLabel">翻译后商品描述:</label>
-                    <div id="translatedDesc" class="output-box"></div>
-                    <button class="copy-btn" onclick="copyToClipboard('translatedDesc', this)">复制</button>
+                        <!-- 翻译结果 -->
+                        <div class="result-box">
+                            <div class="result-header">
+                                <span>🌍 目标国家商品描述</span>
+                                <button class="copy-button" onclick="copyContent('translatedDesc', this)">
+                                    <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                    复制
+                                </button>
+                            </div>
+                            <div class="result-text" id="translatedDesc"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
-
-    </div>
-
-    <div id="loadingModal" class="modal">
-        <div class="modal-content">
-            <div class="spinner"></div>
-            <p>正在处理中...</p>
-        </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+
+        function clearAll() {
+            document.getElementById('productName').value = '';
+            document.getElementById('productDesc').value = '';
+            document.getElementById('productDesc').style.height = '250px';
+            document.getElementById('chineseDesc').textContent = '';
+            document.getElementById('translatedDesc').textContent = '';
+        }
+
+        function copyContent(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            if (!text.trim()) {
+                alert('没有内容可复制');
+                return;
+            }
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerHTML = `
+                    <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    已复制
+                `;
+                button.classList.add('success');
+                
+                setTimeout(() => {
+                    button.innerHTML = `
+                        <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        复制
+                    `;
+                    button.classList.remove('success');
+                }, 2000);
+            }).catch(() => {
+                alert('复制失败，请手动选择文本复制');
+            });
+        }
+    </script>
 </body>
 </html>

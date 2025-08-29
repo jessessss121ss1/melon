@@ -199,16 +199,40 @@ class DescriptionGenerator {
         
         console.log('API响应数据:', data);
         
-        if (data.success) {
-            if (!data.chinese || !data.target_country) {
-                throw new Error('AI生成的内容不完整');
+        console.log('API响应数据:', data);
+        
+        if (data.success && data.raw_content) {
+            try {
+                // 从raw_content中解析JSON
+                let cleanContent = data.raw_content.replace(/```json\s*/, '').replace(/```\s*$/, '').trim();
+                const parsedContent = JSON.parse(cleanContent);
+                
+                if (!parsedContent.chinese) {
+                    throw new Error('JSON解析失败，请重新尝试');
+                }
+                
+                // 查找翻译字段（可能是translation或具体国家名）
+                const translationField = parsedContent.translation || 
+                                        parsedContent.vietnamese || 
+                                        parsedContent.thailand ||
+                                        parsedContent.indonesia ||
+                                        parsedContent.malaysia ||
+                                        Object.values(parsedContent).find(val => val && val !== parsedContent.chinese);
+                
+                if (!translationField) {
+                    throw new Error('JSON解析失败，请重新尝试');
+                }
+                
+                return {
+                    chinese: parsedContent.chinese,
+                    translation: translationField,
+                    raw_content: data.raw_content,
+                    taskId: data.taskId
+                };
+            } catch (parseError) {
+                console.error('解析raw_content失败:', parseError);
+                throw new Error('JSON解析失败，请重新尝试');
             }
-            return {
-                chinese: data.chinese,
-                target_country: data.target_country,
-                raw_content: data.raw_content, // 用于调试
-                parse_error: data.parse_error  // 用于调试
-            };
         } else {
             throw new Error(data.error || '服务器返回数据格式异常');
         }
@@ -247,27 +271,35 @@ class ProductTranslatorApp {
     init() {
         // 绑定事件监听器
         document.getElementById('generateBtn').addEventListener('click', () => this.handleGenerate());
-        document.getElementById('clearBtn').addEventListener('click', () => this.handleClear());
         document.getElementById('targetCountry').addEventListener('change', () => this.updateLabels());
+        
+        // 添加自适应高度功能
+        const productDescTextarea = document.getElementById('productDesc');
+        productDescTextarea.classList.add('auto-resize');
+        productDescTextarea.addEventListener('input', this.autoResize);
         
         // 初始化标签
         this.updateLabels();
     }
+    
+    autoResize(event) {
+        const textarea = event.target;
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 400) + 'px';
+    }
 
     updateLabels() {
         const targetCountry = document.getElementById('targetCountry').value;
-        const nameLabel = document.getElementById('translatedNameLabel');
         const descLabel = document.getElementById('translatedDescLabel');
         const sectionTitle = document.getElementById('translateSectionTitle');
         
         if (targetCountry && this.translator.countryInfo[targetCountry]) {
-            nameLabel.textContent = '目标国家商品名称:';
-            descLabel.textContent = '目标国家商品描述:';
-            sectionTitle.textContent = '目标国家';
+            const countryName = this.translator.countryInfo[targetCountry].name;
+            if (descLabel) descLabel.textContent = `目标国家商品描述`;
+            if (sectionTitle) sectionTitle.textContent = `目标国家版本`;
         } else {
-            nameLabel.textContent = '翻译后商品名称:';
-            descLabel.textContent = '翻译后商品描述:';
-            sectionTitle.textContent = '翻译结果';
+            if (descLabel) descLabel.textContent = '目标国家商品描述';
+            if (sectionTitle) sectionTitle.textContent = '目标国家版本';
         }
     }
 
@@ -293,13 +325,15 @@ class ProductTranslatorApp {
             // 使用专业提示词生成商品描述
             const result = await this.generator.generate(productName, productDesc, targetCountry, selectedModel);
             
-            // 显示中文结果
-            document.getElementById('chineseName').textContent = productName;
-            document.getElementById('chineseDesc').textContent = result.chinese;
+            // 格式化并显示中文结果
+            const formattedChinese = typeof result.chinese === 'object' ? 
+                this.formatObjectToText(result.chinese) : result.chinese;
+            document.getElementById('chineseDesc').textContent = formattedChinese;
             
-            // 显示目标国家结果  
-            document.getElementById('translatedName').textContent = productName;
-            document.getElementById('translatedDesc').textContent = result.target_country;
+            // 格式化并显示目标国家结果
+            const formattedTranslation = typeof result.translation === 'object' ? 
+                this.formatObjectToText(result.translation) : result.translation;
+            document.getElementById('translatedDesc').textContent = formattedTranslation;
             
             console.log('AI生成成功:', result);
 
@@ -310,17 +344,80 @@ class ProductTranslatorApp {
             alert('生成失败：' + error.message);
             
             // 清空所有输出框
-            document.getElementById('chineseName').textContent = '';
             document.getElementById('chineseDesc').textContent = '';
-            document.getElementById('translatedName').textContent = '';
             document.getElementById('translatedDesc').textContent = '';
         }
 
         this.showLoading(false);
     }
+    
+    formatObjectToText(obj) {
+        if (!obj || typeof obj !== 'object') return obj;
+        
+        let formatted = '';
+        
+        // 处理中文对象格式
+        if (obj.欢迎语) {
+            formatted += `${obj.欢迎语}\n\n`;
+        }
+        
+        if (obj.核心卖点) {
+            formatted += `🌟 核心卖点：\n${obj.核心卖点}\n\n`;
+        }
+        
+        if (obj.使用场景) {
+            formatted += `🎯 使用场景：\n${obj.使用场景}\n\n`;
+        }
+        
+        if (obj.详细参数) {
+            const params = typeof obj.详细参数 === 'object' ? 
+                JSON.stringify(obj.详细参数, null, 2).replace(/[{}\"]/g, '').replace(/,\n/g, '\n').trim() :
+                obj.详细参数;
+            formatted += `📋 详细参数：\n${params}\n\n`;
+        }
+        
+        if (obj.注意事项) {
+            formatted += `⚠️ 注意事项：\n${obj.注意事项}\n\n`;
+        }
+        
+        if (obj.关键词标签) {
+            formatted += `🏷️ 关键词：${obj.关键词标签}`;
+        }
+        
+        // 处理英文对象格式
+        if (obj.Welcome || obj.welcome_message) {
+            formatted += `${obj.Welcome || obj.welcome_message}\n\n`;
+        }
+        
+        if (obj['Key Features'] || obj.key_features) {
+            formatted += `🌟 Key Features:\n${obj['Key Features'] || obj.key_features}\n\n`;
+        }
+        
+        if (obj['Usage Scenarios'] || obj.usage_scenarios) {
+            formatted += `🎯 Usage Scenarios:\n${obj['Usage Scenarios'] || obj.usage_scenarios}\n\n`;
+        }
+        
+        if (obj.Specifications || obj.specifications) {
+            const specs = obj.Specifications || obj.specifications;
+            const formattedSpecs = typeof specs === 'object' ? 
+                JSON.stringify(specs, null, 2).replace(/[{}\"]/g, '').replace(/,\n/g, '\n').trim() :
+                specs;
+            formatted += `📋 Specifications:\n${formattedSpecs}\n\n`;
+        }
+        
+        if (obj.Precautions || obj.precautions) {
+            formatted += `⚠️ Precautions:\n${obj.Precautions || obj.precautions}\n\n`;
+        }
+        
+        if (obj.Keywords || obj.keywords) {
+            formatted += `🏷️ Keywords: ${obj.Keywords || obj.keywords}`;
+        }
+        
+        return formatted.trim() || JSON.stringify(obj, null, 2);
+    }
 
     handleClear() {
-        // 清空输入框（保留API密钥）
+        // 清空输入框
         document.getElementById('productName').value = '';
         document.getElementById('productDesc').value = '';
         document.getElementById('targetCountry').value = 'vietnam';
@@ -329,9 +426,7 @@ class ProductTranslatorApp {
         document.getElementById('modelSelect').value = 'deepseek';
 
         // 清空所有输出框
-        document.getElementById('chineseName').textContent = '';
         document.getElementById('chineseDesc').textContent = '';
-        document.getElementById('translatedName').textContent = '';
         document.getElementById('translatedDesc').textContent = '';
         
         // 重置标签
@@ -339,8 +434,44 @@ class ProductTranslatorApp {
     }
 
     showLoading(show) {
-        const modal = document.getElementById('loadingModal');
-        modal.style.display = show ? 'flex' : 'none';
+        const generateBtn = document.getElementById('generateBtn');
+        const chineseDesc = document.getElementById('chineseDesc');
+        const translatedDesc = document.getElementById('translatedDesc');
+        const progressBar = document.getElementById('progressBar');
+        
+        if (show) {
+            // 显示顶部进度条
+            if (progressBar) {
+                progressBar.classList.add('active');
+            }
+            
+            // 按钮变为加载状态
+            generateBtn.classList.add('loading');
+            generateBtn.disabled = true;
+            
+            // 结果区域显示加载状态
+            chineseDesc.innerHTML = `
+                <div class="result-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-message">AI正在生成中文描述...</div>
+                </div>
+            `;
+            translatedDesc.innerHTML = `
+                <div class="result-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-message">AI正在生成目标国家描述...</div>
+                </div>
+            `;
+        } else {
+            // 隐藏进度条
+            if (progressBar) {
+                progressBar.classList.remove('active');
+            }
+            
+            // 恢复按钮状态
+            generateBtn.classList.remove('loading');
+            generateBtn.disabled = false;
+        }
     }
 }
 
@@ -417,7 +548,14 @@ function showCopyError() {
     alert('复制失败，请手动选择文本复制');
 }
 
+// 全局函数，供 HTML 按钮调用
+function clearAllFields() {
+    if (window.app) {
+        window.app.handleClear();
+    }
+}
+
 // 初始化应用
 document.addEventListener('DOMContentLoaded', () => {
-    new ProductTranslatorApp();
+    window.app = new ProductTranslatorApp();
 });
