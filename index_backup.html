@@ -68,7 +68,7 @@
         }
 
         .result-text {
-            flex: 1;
+            height: 280px;
             padding: 8px;
             font-size: 13px;
             line-height: 1.6;
@@ -76,7 +76,6 @@
             color: #374151;
             overflow-y: auto;
             background: white;
-            min-height: 0;
         }
 
         .result-text:empty::before {
@@ -116,7 +115,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .title-text {
@@ -139,6 +137,10 @@
         }
 
         .copy-small-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
             padding: 4px 8px;
             background: #e5e7eb;
             color: #6b7280;
@@ -147,45 +149,22 @@
             font-size: 10px;
             cursor: pointer;
             transition: all 0.2s;
-            opacity: 0.7;
+            opacity: 0;
+        }
+
+        .section-label:hover .copy-small-btn,
+        .title-section:hover .copy-small-btn,
+        .description-section:hover .copy-small-btn {
+            opacity: 1;
         }
 
         .copy-small-btn:hover {
             background: #d1d5db;
             color: #374151;
-            opacity: 1;
         }
 
-        .result-loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            min-height: 60px;
-            padding: 8px;
-        }
-
-        .loading-spinner {
-            width: 24px;
-            height: 24px;
-            border: 2px solid #e5e7eb;
-            border-top: 2px solid #3b82f6;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 8px;
-        }
-
-        .loading-message {
-            color: #6b7280;
-            font-size: 12px;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .section-label {
+            position: relative;
         }
 
         .generate-section {
@@ -285,7 +264,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label" for="productDesc">商品描述</label>
-                                    <textarea class="form-textarea" id="productDesc" placeholder="请输入商品描述" style="height: 250px; resize: none;"></textarea>
+                                    <textarea class="form-textarea" id="productDesc" placeholder="请输入商品描述（可选）" style="height: 250px; resize: none;"></textarea>
                                 </div>
 
                                 <div class="generate-section" style="margin-top: 20px;">
@@ -332,28 +311,15 @@
                         <!-- 翻译结果 -->
                         <div class="result-box">
                             <div class="result-header">
-                                <span>🌍 目标国家版本</span>
-                                <button class="copy-button" onclick="copyFullContent('target', this)">
+                                <span>🌍 目标国家商品描述</span>
+                                <button class="copy-button" onclick="copyContent('translatedDesc', this)">
                                     <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                                     </svg>
-                                    复制全部
+                                    复制
                                 </button>
                             </div>
-                            <div class="result-content">
-                                <div class="title-section">
-                                    <div class="section-label">🏷️ 标题
-                                        <button class="copy-small-btn" onclick="copyContent('targetTitle', this)">复制</button>
-                                    </div>
-                                    <div class="title-text" id="targetTitle"></div>
-                                </div>
-                                <div class="description-section">
-                                    <div class="section-label">📄 描述
-                                        <button class="copy-small-btn" onclick="copyContent('translatedDesc', this)">复制</button>
-                                    </div>
-                                    <div class="result-text" id="translatedDesc"></div>
-                                </div>
-                            </div>
+                            <div class="result-text" id="translatedDesc"></div>
                         </div>
                     </div>
                 </div>
@@ -363,13 +329,12 @@
 
     <script src="script.js"></script>
     <script>
+
         function clearAll() {
             document.getElementById('productName').value = '';
             document.getElementById('productDesc').value = '';
             document.getElementById('productDesc').style.height = '250px';
-            document.getElementById('chineseTitle').textContent = '';
             document.getElementById('chineseDesc').textContent = '';
-            document.getElementById('targetTitle').textContent = '';
             document.getElementById('translatedDesc').textContent = '';
         }
 
@@ -392,50 +357,11 @@
                 button.classList.add('success');
                 
                 setTimeout(() => {
-                    button.innerHTML = `复制`;
-                    button.classList.remove('success');
-                }, 2000);
-            }).catch(() => {
-                alert('复制失败，请手动选择文本复制');
-            });
-        }
-
-        function copyFullContent(type, button) {
-            let titleElement, descElement;
-            
-            if (type === 'chinese') {
-                titleElement = document.getElementById('chineseTitle');
-                descElement = document.getElementById('chineseDesc');
-            } else {
-                titleElement = document.getElementById('targetTitle');
-                descElement = document.getElementById('translatedDesc');
-            }
-            
-            const title = titleElement.textContent.trim();
-            const desc = descElement.textContent.trim();
-            
-            if (!title && !desc) {
-                alert('没有内容可复制');
-                return;
-            }
-            
-            const fullContent = `标题：${title}\n\n描述：\n${desc}`;
-            
-            navigator.clipboard.writeText(fullContent).then(() => {
-                button.innerHTML = `
-                    <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                    已复制
-                `;
-                button.classList.add('success');
-                
-                setTimeout(() => {
                     button.innerHTML = `
                         <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                         </svg>
-                        复制全部
+                        复制
                     `;
                     button.classList.remove('success');
                 }, 2000);

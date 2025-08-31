@@ -207,25 +207,25 @@ class DescriptionGenerator {
                 let cleanContent = data.raw_content.replace(/```json\s*/, '').replace(/```\s*$/, '').trim();
                 const parsedContent = JSON.parse(cleanContent);
                 
-                if (!parsedContent.chinese) {
-                    throw new Error('JSON解析失败，请重新尝试');
+                // 检查新的JSON结构：title和description下分别有chinese和target
+                if (!parsedContent.title || !parsedContent.description) {
+                    throw new Error('JSON格式错误：缺少title或description字段');
                 }
                 
-                // 查找翻译字段（可能是translation或具体国家名）
-                const translationField = parsedContent.translation || 
-                                        parsedContent.vietnamese || 
-                                        parsedContent.thailand ||
-                                        parsedContent.indonesia ||
-                                        parsedContent.malaysia ||
-                                        Object.values(parsedContent).find(val => val && val !== parsedContent.chinese);
-                
-                if (!translationField) {
-                    throw new Error('JSON解析失败，请重新尝试');
+                if (!parsedContent.title.chinese || !parsedContent.title.target ||
+                    !parsedContent.description.chinese || !parsedContent.description.target) {
+                    throw new Error('JSON格式错误：title或description缺少chinese/target子字段');
                 }
                 
                 return {
-                    chinese: parsedContent.chinese,
-                    translation: translationField,
+                    title: {
+                        chinese: parsedContent.title.chinese,
+                        target: parsedContent.title.target
+                    },
+                    description: {
+                        chinese: parsedContent.description.chinese,
+                        target: parsedContent.description.target
+                    },
                     raw_content: data.raw_content,
                     taskId: data.taskId
                 };
@@ -314,6 +314,11 @@ class ProductTranslatorApp {
             return;
         }
 
+        if (!productDesc) {
+            alert('请输入商品描述');
+            return;
+        }
+
         if (!targetCountry) {
             alert('请选择目标销售国家');
             return;
@@ -325,15 +330,17 @@ class ProductTranslatorApp {
             // 使用专业提示词生成商品描述
             const result = await this.generator.generate(productName, productDesc, targetCountry, selectedModel);
             
-            // 格式化并显示中文结果
-            const formattedChinese = typeof result.chinese === 'object' ? 
-                this.formatObjectToText(result.chinese) : result.chinese;
-            document.getElementById('chineseDesc').textContent = formattedChinese;
+            // 显示中文标题和描述
+            document.getElementById('chineseTitle').textContent = result.title.chinese;
+            const formattedChineseDesc = typeof result.description.chinese === 'object' ? 
+                this.formatObjectToText(result.description.chinese) : result.description.chinese;
+            document.getElementById('chineseDesc').textContent = formattedChineseDesc;
             
-            // 格式化并显示目标国家结果
-            const formattedTranslation = typeof result.translation === 'object' ? 
-                this.formatObjectToText(result.translation) : result.translation;
-            document.getElementById('translatedDesc').textContent = formattedTranslation;
+            // 显示目标国家标题和描述
+            document.getElementById('targetTitle').textContent = result.title.target;
+            const formattedTargetDesc = typeof result.description.target === 'object' ? 
+                this.formatObjectToText(result.description.target) : result.description.target;
+            document.getElementById('translatedDesc').textContent = formattedTargetDesc;
             
             console.log('AI生成成功:', result);
 
@@ -344,7 +351,9 @@ class ProductTranslatorApp {
             alert('生成失败：' + error.message);
             
             // 清空所有输出框
+            document.getElementById('chineseTitle').textContent = '';
             document.getElementById('chineseDesc').textContent = '';
+            document.getElementById('targetTitle').textContent = '';
             document.getElementById('translatedDesc').textContent = '';
         }
 
@@ -426,7 +435,9 @@ class ProductTranslatorApp {
         document.getElementById('modelSelect').value = 'deepseek';
 
         // 清空所有输出框
+        document.getElementById('chineseTitle').textContent = '';
         document.getElementById('chineseDesc').textContent = '';
+        document.getElementById('targetTitle').textContent = '';
         document.getElementById('translatedDesc').textContent = '';
         
         // 重置标签
@@ -435,7 +446,9 @@ class ProductTranslatorApp {
 
     showLoading(show) {
         const generateBtn = document.getElementById('generateBtn');
+        const chineseTitle = document.getElementById('chineseTitle');
         const chineseDesc = document.getElementById('chineseDesc');
+        const targetTitle = document.getElementById('targetTitle');
         const translatedDesc = document.getElementById('translatedDesc');
         const progressBar = document.getElementById('progressBar');
         
@@ -450,10 +463,22 @@ class ProductTranslatorApp {
             generateBtn.disabled = true;
             
             // 结果区域显示加载状态
+            chineseTitle.innerHTML = `
+                <div class="result-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-message">AI正在生成中文标题...</div>
+                </div>
+            `;
             chineseDesc.innerHTML = `
                 <div class="result-loading">
                     <div class="loading-spinner"></div>
                     <div class="loading-message">AI正在生成中文描述...</div>
+                </div>
+            `;
+            targetTitle.innerHTML = `
+                <div class="result-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-message">AI正在生成目标国家标题...</div>
                 </div>
             `;
             translatedDesc.innerHTML = `

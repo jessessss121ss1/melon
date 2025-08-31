@@ -1367,5 +1367,191 @@
       "apiLatency": null,
       "processingTime": null
     }
+  },
+  {
+    "id": "1c24ef08e32e1ecf238fc0755753d702",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-08-31T15:16:43.872Z",
+    "startedAt": "2025-08-31T15:16:43.874Z",
+    "completedAt": "2025-08-31T15:17:20.398Z",
+    "duration": 36524,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "韩版复古丝巾发带女士绑包丝带蝴蝶结飘带发饰小长条丝巾领巾批发",
+    "productDescription": "风格：日韩风\n品牌：saufuo\n生产编号：-\n销售序列号：-\n种类：丝巾发带\n造型：花卉\n包装：独立包装\n适用送礼场合：婚庆,旅游纪念,员工福利\n加工定制：是\n货号：WHSF4364\n产地：金华\n图案：格纹\n主要下游平台：ebay,亚马逊,wish,速卖通,独立站,LAZADA\n颜色：WHSF4364-A,WHSF4364-B,WHSF4364-C,WHSF4364-D,WHSF4364-E,WHSF4364-F,WHSF4364-G,WHSF4364-H,WHSF4364-I,WHSF4364-J,WHSF4364-K,WHSF4364-L,WHSF4364-M,WHSF4364-N,WHSF4364-O,WHSF4364-P,WHSF4364-Q,WHSF4364-R,WHSF4364-S,WHAC212,WHAC213-A,WHAC214,WHAC245,WHAC246,WHAC247,WHAC248,WHAC249,WHAC250,WHAC251,WHAC252,WHAC253,WHAC254,WHAC255,WHAC256,WHAC257,WHAC258,WHAC259,WHAC260,花色随机\n主要销售地区：非洲,欧洲,南美,东南亚,北美,东北亚,中东\n有可授权的自有品牌：是\n是否跨境出口专供货源：是\n流行元素：动物,蕾丝,图案,格子,田园,民族,卡通,皇冠,麻花,复古,字母,花朵,花边,可折叠,碎花,褶皱,蝴蝶结,丝带,蝴蝶,豹纹,植绒,波点,羽毛,飘带,马卡龙,星星,糖果,印花/印染\n上市年份/季节：2021年春季\n产品类别：头饰",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n3. 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：韩版复古丝巾发带女士绑包丝带蝴蝶结飘带发饰小长条丝巾领巾批发\n - product description：风格：日韩风\n品牌：saufuo\n生产编号：-\n销售序列号：-\n种类：丝巾发带\n造型：花卉\n包装：独立包装\n适用送礼场合：婚庆,旅游纪念,员工福利\n加工定制：是\n货号：WHSF4364\n产地：金华\n图案：格纹\n主要下游平台：ebay,亚马逊,wish,速卖通,独立站,LAZADA\n颜色：WHSF4364-A,WHSF4364-B,WHSF4364-C,WHSF4364-D,WHSF4364-E,WHSF4364-F,WHSF4364-G,WHSF4364-H,WHSF4364-I,WHSF4364-J,WHSF4364-K,WHSF4364-L,WHSF4364-M,WHSF4364-N,WHSF4364-O,WHSF4364-P,WHSF4364-Q,WHSF4364-R,WHSF4364-S,WHAC212,WHAC213-A,WHAC214,WHAC245,WHAC246,WHAC247,WHAC248,WHAC249,WHAC250,WHAC251,WHAC252,WHAC253,WHAC254,WHAC255,WHAC256,WHAC257,WHAC258,WHAC259,WHAC260,花色随机\n主要销售地区：非洲,欧洲,南美,东南亚,北美,东北亚,中东\n有可授权的自有品牌：是\n是否跨境出口专供货源：是\n流行元素：动物,蕾丝,图案,格子,田园,民族,卡通,皇冠,麻花,复古,字母,花朵,花边,可折叠,碎花,褶皱,蝴蝶结,丝带,蝴蝶,豹纹,植绒,波点,羽毛,飘带,马卡龙,星星,糖果,印花/印染\n上市年份/季节：2021年春季\n产品类别：头饰\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"韩版复古丝巾发带女士头饰，碎花格纹蝴蝶结飘带，多用途装饰送礼佳品\",\n    \"target\": \"Khăn Bandana Phong Cách Hàn Quốc Retro, Dải Ruy Băng Nơ Đa Năng Cho Nữ, Phụ Kiện Tóc Thời Trang\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买复古丝巾发带享受批发价格，多买多省😍！\\n核心亮点：这款韩版复古丝巾发带采用优质丝绸质感面料，手感顺滑舒适，亲肤透气。设计融合复古花卉、格纹、蝴蝶结等流行元素，展现优雅时尚的日韩风格。它不仅是发带，更可作为头巾、领巾、手腕带或包包装饰，一物多用，轻松搭配各种造型。支持定制加工，满足个性化需求，是送礼和自用的完美选择。\\n使用场景：日常出行佩戴，增添时尚感；婚礼、派对等场合作为装饰，提升气质；旅游纪念或作为员工福利礼品，实用又贴心；也可用于摄影造型，打造多样风格。\\n商品详情：品牌：saufuo；种类：丝巾发带；造型：花卉、格纹、蝴蝶结等多种图案；颜色：多色可选（如WHSF4364系列等），花色随机发货；材质：丝绸质感面料；尺寸：长条式设计，具体尺寸可定制；包装：独立包装，精美适合送礼；产地：金华；加工定制：支持；适用场合：婚庆、旅游纪念、员工福利等。\\n注意事项：本产品为精致饰品，避免与尖锐物品接触以防勾丝；清洗时建议手洗，勿用力搓揉，晾干时避免阳光直射以保持颜色鲜艳。\\n#韩版发带 #复古丝巾 #蝴蝶结头饰 #多用途装饰 #送礼佳品 #定制支持\",\n    \"target\": \"Chào mừng bạn! Ưu đãi đặc biệt trong thời gian giới hạn, mua khăn bandana retro với giá bán buôn, càng mua nhiều càng tiết kiệm 😍!\\nĐiểm nổi bật: Khăn bandana phong cách Hàn Quốc này được làm từ chất liệu mềm mại như lụa, cảm giác mượt mà và thoáng khí, thân thiện với da. Thiết kế kết hợp các yếu tố thời trang như hoa retro, kẻ caro, nơ bướm, thể hiện phong cách thanh lịch và hiện đại. Nó không chỉ là phụ kiện tóc mà còn có thể dùng làm khăn quàng cổ, dải cổ tay hoặc trang trí túi xách, đa năng và dễ dàng phối đồ. Hỗ trợ gia công tùy chỉnh, đáp ứng nhu cầu cá nhân, là lựa chọn hoàn hảo cho quà tặng hoặc tự sử dụng.\\nKịch bản sử dụng: Đeo hàng ngày để tăng thêm nét thời trang; Trang trí trong đám cưới, tiệc tùng để nâng cao khí chất; Làm quà lưu niệm du lịch hoặc phúc lợi nhân viên, thiết thực và tinh tế; Cũng có thể dùng cho chụp ảnh, tạo nhiều phong cách đa dạng.\\nChi tiết sản phẩm: Thương hiệu: saufuo; Loại: Khăn bandana; Kiểu dáng: Nhiều họa tiết như hoa, caro, nơ; Màu sắc: Nhiều màu để lựa chọn (ví dụ dòng WHSF4364), giao ngẫu nhiên; Chất liệu: Vải mềm như lụa; Kích thước: Thiết kế dài, có thể tùy chỉnh; Đóng gói: Bao bì riêng, đẹp mắt phù hợp làm quà tặng; Xuất xứ: Kim Hoa; Gia công: Có hỗ trợ; Phù hợp cho: Đám cưới, kỷ niệm du lịch, phúc lợi nhân viên.\\nLưu ý: Sản phẩm là phụ kiện tinh tế, tránh tiếp xúc với vật sắc nhọn để không bị xước; Khi giặt, nên giặt tay nhẹ nhàng, không vò mạnh, phơi khô tránh ánh nắng trực tiếp để giữ màu tươi sáng.\\n#BandanaHànQuốc #KhănRetro #PhụKiệnTócNơ #TrangTríĐaNăng #QuàTặngLýTưởng #TùyChỉnhTheoYêuCầu\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 36525,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "3ae2970435d7e821b3fdf05c628445a1",
+    "taskType": "generate-description",
+    "status": "running",
+    "createdAt": "2025-08-31T15:20:06.032Z",
+    "startedAt": "2025-08-31T15:20:06.033Z",
+    "completedAt": null,
+    "duration": null,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "韩版复古丝巾发带女士绑包丝带蝴蝶结飘带发饰小长条丝巾领巾批发",
+    "productDescription": "风格：日韩风\n品牌：saufuo\n生产编号：-\n销售序列号：-\n种类：丝巾发带\n造型：花卉\n包装：独立包装\n适用送礼场合：婚庆,旅游纪念,员工福利\n加工定制：是\n货号：WHSF4364\n产地：金华\n图案：格纹\n主要下游平台：ebay,亚马逊,wish,速卖通,独立站,LAZADA\n颜色：WHSF4364-A,WHSF4364-B,WHSF4364-C,WHSF4364-D,WHSF4364-E,WHSF4364-F,WHSF4364-G,WHSF4364-H,WHSF4364-I,WHSF4364-J,WHSF4364-K,WHSF4364-L,WHSF4364-M,WHSF4364-N,WHSF4364-O,WHSF4364-P,WHSF4364-Q,WHSF4364-R,WHSF4364-S,WHAC212,WHAC213-A,WHAC214,WHAC245,WHAC246,WHAC247,WHAC248,WHAC249,WHAC250,WHAC251,WHAC252,WHAC253,WHAC254,WHAC255,WHAC256,WHAC257,WHAC258,WHAC259,WHAC260,花色随机\n主要销售地区：非洲,欧洲,南美,东南亚,北美,东北亚,中东\n有可授权的自有品牌：是\n是否跨境出口专供货源：是\n流行元素：动物,蕾丝,图案,格子,田园,民族,卡通,皇冠,麻花,复古,字母,花朵,花边,可折叠,碎花,褶皱,蝴蝶结,丝带,蝴蝶,豹纹,植绒,波点,羽毛,飘带,马卡龙,星星,糖果,印花/印染\n上市年份/季节：2021年春季\n产品类别：头饰",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n3. 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：韩版复古丝巾发带女士绑包丝带蝴蝶结飘带发饰小长条丝巾领巾批发\n - product description：风格：日韩风\n品牌：saufuo\n生产编号：-\n销售序列号：-\n种类：丝巾发带\n造型：花卉\n包装：独立包装\n适用送礼场合：婚庆,旅游纪念,员工福利\n加工定制：是\n货号：WHSF4364\n产地：金华\n图案：格纹\n主要下游平台：ebay,亚马逊,wish,速卖通,独立站,LAZADA\n颜色：WHSF4364-A,WHSF4364-B,WHSF4364-C,WHSF4364-D,WHSF4364-E,WHSF4364-F,WHSF4364-G,WHSF4364-H,WHSF4364-I,WHSF4364-J,WHSF4364-K,WHSF4364-L,WHSF4364-M,WHSF4364-N,WHSF4364-O,WHSF4364-P,WHSF4364-Q,WHSF4364-R,WHSF4364-S,WHAC212,WHAC213-A,WHAC214,WHAC245,WHAC246,WHAC247,WHAC248,WHAC249,WHAC250,WHAC251,WHAC252,WHAC253,WHAC254,WHAC255,WHAC256,WHAC257,WHAC258,WHAC259,WHAC260,花色随机\n主要销售地区：非洲,欧洲,南美,东南亚,北美,东北亚,中东\n有可授权的自有品牌：是\n是否跨境出口专供货源：是\n流行元素：动物,蕾丝,图案,格子,田园,民族,卡通,皇冠,麻花,复古,字母,花朵,花边,可折叠,碎花,褶皱,蝴蝶结,丝带,蝴蝶,豹纹,植绒,波点,羽毛,飘带,马卡龙,星星,糖果,印花/印染\n上市年份/季节：2021年春季\n产品类别：头饰\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": null,
+    "metrics": {
+      "responseTime": null,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "5fcdeb7831803970613d3a259cd5644e",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-08-31T15:20:20.843Z",
+    "startedAt": "2025-08-31T15:20:20.845Z",
+    "completedAt": "2025-08-31T15:20:50.499Z",
+    "duration": 29654,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发",
+    "productDescription": "所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n3. 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发\n - product description：所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"创意葱姜蒜水果蔬菜毛绒挂件钥匙扣，网红爆款，支持来样定制，青年适用\",\n    \"target\": \"Móc khóa lông thú rau củ trái cây sáng tạo hàng hot, hỗ trợ tùy chỉnh theo mẫu, phù hợp cho giới trẻ\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买创意蔬菜水果毛绒挂件钥匙扣，享受批发价格😍！\\n核心亮点：产品以葱、姜、蒜及各种水果蔬菜为灵感，设计独特有趣，表情搞怪可爱，为日常生活增添无限乐趣。采用优质短毛绒面料和PP棉填充，手感柔软舒适，耐用不易变形。支持来样定制，满足个性化需求，是批发和零售的绝佳选择。\\n使用场景：可挂在钥匙、背包或手机上，作为日常装饰，展现个性风格；也可用于娃娃机奖品，吸引顾客；还能作为礼物赠送朋友，传递快乐与创意。\\n商品详情：颜色多样，包括姜、火龙果、石榴、毛豆、芭乐、西红柿、玉米、香菇等50多种选项；填充材质为PP棉，毛绒分类为短毛绒；包装方式支持散装或独立包装；产地为中国；适用年龄为15-35岁青年。\\n注意事项：本品为毛绒制品，请避免与尖锐物品接触，以防刮损；清洗时建议手洗，勿使用漂白剂，以保持产品色泽和质感。\\n#创意毛绒挂件 #蔬菜水果钥匙扣 #来样定制 #网红爆款 #青年礼物\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, mua ngay móc khóa lông thú rau củ trái cây sáng tạo với giá bán buôn siêu hấp dẫn 😍！\\nĐiểm nổi bật: Sản phẩm lấy cảm hứng từ hành, gừng, tỏi và các loại trái cây rau củ đa dạng, thiết kế độc đáo và hài hước, biểu cảm dễ thương, mang lại niềm vui cho cuộc sống hàng ngày. Chất liệu lông thú cao cấp và bông PP mềm mại, êm ái khi cầm, bền và không dễ biến dạng. Hỗ trợ tùy chỉnh theo mẫu, đáp ứng nhu cầu cá nhân hóa, là lựa chọn tuyệt vời cho bán buôn và bán lẻ.\\nKhu vực sử dụng: Có thể treo trên chìa khóa, ba lô hoặc điện thoại, làm vật trang trí hàng ngày thể hiện phong cách cá nhân; dùng làm giải thưởng trong máy抓娃娃 thu hút khách hàng; hoặc làm quà tặng bạn bè, truyền tải niềm vui và sự sáng tạo.\\nChi tiết sản phẩm: Đa dạng màu sắc, bao gồm gừng, thanh long, lựu, đậu nành, ổi, cà chua, ngô, nấm hương và hơn 50 lựa chọn khác; chất liệu bông PP, phân loại lông thú ngắn; cách đóng gói: rời hoặc bao bì độc lập; xuất xứ: Trung Quốc; độ tuổi phù hợp: thanh niên từ 15-35 tuổi.\\nLưu ý: Sản phẩm làm từ lông thú, tránh tiếp xúc với vật sắc nhọn để không bị trầy xước; khi giặt nên giặt tay, không dùng chất tẩy trắng để giữ màu sắc và chất lượng sản phẩm.\\n#Móc khóa lông thú sáng tạo #Móc khóa rau củ trái cây #Tùy chỉnh theo mẫu #Hàng hot #Quà tặng cho giới trẻ\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 29654,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "cb82e26aa09c15090cc6c2c80d6996ef",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-08-31T15:23:30.978Z",
+    "startedAt": "2025-08-31T15:23:30.980Z",
+    "completedAt": "2025-08-31T15:24:06.626Z",
+    "duration": 35646,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发",
+    "productDescription": "所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n3. 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发\n - product description：所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "```json\n{\n  \"title\": {\n    \"chinese\": \"创意蔬菜水果搞怪表情毛绒挂件钥匙扣，越南网红爆款，青年个性装饰礼物\",\n    \"target\": \"Móc khóa lông thú rau củ trái cây biểu cảm hài hước, hàng hot tại Việt Nam, quà tặng trang trí cá tính cho giới trẻ\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买创意蔬菜水果毛绒挂件即享超值折扣😍！\\n\\n核心亮点：这些毛绒挂件采用50+种蔬菜水果造型设计，表情搞怪可爱，为生活增添趣味。采用优质短毛绒面料和PP棉填充，手感柔软舒适，耐用不易变形。支持来样定制，满足个性化需求，是越南年轻人中最受欢迎的装饰小物。\\n\\n使用场景：可挂在钥匙串上方便寻找；作为背包挂饰展现个性；放置在车内增添驾驶乐趣；作为娃娃机奖品吸引顾客；还可作为朋友间互赠的趣味小礼物，特别适合越南年轻人表达独特品味。\\n\\n商品详情：\\n- 材质：优质短毛绒面料，PP棉填充\\n- 尺寸：5-8cm（根据不同造型）\\n- 颜色：姜、火龙果、石榴、毛豆、芭乐、西红柿、玉米、香菇等50+种选择\\n- 包装：散装或独立包装可选\\n- 产地：中国\\n- 适用年龄：15-35岁青年\\n- 认证：符合14岁以上玩具安全标准\\n\\n注意事项：本品为毛绒制品，请避免与尖锐物品接触；建议手洗轻柔清洁，不可漂白；请置于阴凉干燥处保存；婴幼儿请在成人监护下使用。\\n\\n#越南网红挂件 #毛绒钥匙扣 #蔬菜水果造型 #搞怪表情 #青年礼物 #个性装饰 #来样定制\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, giảm giá cực sốc khi mua móc khóa lông thú rau củ trái cây sáng tạo 😍！\\n\\nĐiểm nổi bật: Thiết kế với hơn 50+ kiểu dáng rau củ trái cây độc đáo, biểu cảm hài hước đáng yêu, mang lại niềm vui cho cuộc sống. Chất liệu lông thú cao cấp và bông PP填充, mềm mại và thoải mái khi cầm, bền đẹp không biến dạng. Hỗ trợ定制 theo mẫu, đáp ứng nhu cầu cá nhân hóa, là món đồ trang trí được giới trẻ Việt Nam yêu thích nhất.\\n\\nKịch bản sử dụng: Treo trên chùm chìa khóa để dễ tìm kiếm; làm phụ kiện trang trí ba lô thể hiện cá tính; đặt trong xe hơi tăng thêm niềm vui lái xe; làm giải thưởng trong máy抓娃娃; còn có thể làm quà tặng thú vị giữa bạn bè, đặc biệt phù hợp với giới trẻ Việt Nam để thể hiện gu thẩm mỹ độc đáo.\\n\\nChi tiết sản phẩm:\\n- Chất liệu: Vải lông thú cao cấp,填充 bông PP\\n- Kích thước: 5-8cm (tùy theo kiểu dáng)\\n- Màu sắc: Hơn 50+ lựa chọn包括 gừng, thanh long, lựu, đậu nành, ổi, cà chua, ngô, nấm hương,...\\n- Đóng gói: Có thể chọn lẻ hoặc đóng gói riêng\\n- Xuất xứ: Trung Quốc\\n- Độ tuổi phù hợp: Thanh niên 15-35 tuổi\\n- Chứng nhận: Đạt tiêu chuẩn an toàn đồ chơi cho trẻ em từ 14 tuổi trở lên\\n\\nLưu ý: Sản phẩm làm bằng chất liệu lông thú, tránh tiếp xúc với vật sắc nhọn; khuyến nghị giặt tay nhẹ nhàng, không được tẩy trắng; bảo quản nơi khô ráo thoáng mát; trẻ nhỏ sử dụng dưới sự giám sát của người lớn.\\n\\n#MócKhóaHotVietNam #MócKhóaLôngThú #RauCủTráiCây #BiểuCảmHàiHước #QuàTặngGiớiTrẻ #TrangTríCáTính #ĐặtTheoMẫu\"\n  }\n}\n```",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 35646,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "d723af7b14f8b2bc0dc69000dd3605d9",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-08-31T15:24:47.364Z",
+    "startedAt": "2025-08-31T15:24:47.371Z",
+    "completedAt": "2025-08-31T15:25:15.281Z",
+    "duration": 27910,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发",
+    "productDescription": "所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n3. 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：创意蔬菜搞怪表情葱姜蒜水果植物毛绒挂件钥匙扣娃娃机公仔批发\n - product description：所属分类：毛绒公仔\n造型类别：植物\n造型是否卡通、动漫：否\n品牌：其他\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：蔬菜水果10081\n加工定制：是\n加工方式：来样定制\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以上的玩具\n颜色：姜,火龙果,石榴,毛豆,芭乐,圆形水蜜桃,西红柿,新玉米,香菇,开心果,豌豆,圣女果,新胡萝卜,葱,茄子,折耳根,笑脸萝卜,蓝莓,三头葱,蒜,老姜,土豆,包菜,牛肚菌,莲藕,苦瓜,红辣椒,香菜,橡果,带腿牛油果,花生,磨毛花生,胖土豆,西蓝花,小白菜,香葱,柿子,南瓜,玉米,竹笋,黑豆,香蕉,牛油果,毛线南瓜,胡萝卜,车厘子,草莓,水蜜桃,菠萝,榴莲,西瓜,火龙果零钱包,红苹果零钱包,雪梨零钱包,绿苹果零钱包,菠萝零钱包,橙子零钱包,西瓜零钱包,猕猴桃零钱包,草莓零钱包\n高度：散装,独立包装\n主要下游平台：其他\n主要销售地区：其他\n有可授权的自有品牌：否\n是否跨境出口专供货源：是\n适用年龄：青年（15-35岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "```json\n{\n  \"title\": {\n    \"chinese\": \"创意葱姜蒜水果植物毛绒挂件钥匙扣，越南网红爆款，青年个性装饰首选\",\n    \"target\": \"Móc khóa lông thú rau củ trái cây sáng tạo, hàng hot tại Việt Nam, trang trí cá tính cho giới trẻ\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买创意毛绒挂件钥匙扣享受超值折扣🎉！\\n核心亮点：采用优质短毛绒面料，填充柔软PP棉，手感舒适细腻。60+种蔬菜水果造型可选，包括葱姜蒜、火龙果、榴莲等越南流行款式，表情搞怪可爱。支持来样定制，满足个性化需求，是娃娃机投放和批发的最佳选择。\\n使用场景：可挂在钥匙串上方便寻找，作为背包挂饰展现个性，放置车内增添趣味，作为娃娃机奖品吸引客流，更是送给朋友的精美小礼物。\\n商品详情：材质：短毛绒+PP棉；尺寸：5-8cm；包装方式：散装/独立包装；颜色：姜、火龙果、石榴、毛豆、芭乐、西红柿、榴莲、西瓜等60+款式；产地：中国；适用年龄：15-35岁青年；认证：符合14岁以上玩具安全标准。\\n注意事项：避免与尖锐物品共同存放，建议手洗阴干，不宜暴晒。婴幼儿请在成人监护下使用。\\n#越南爆款钥匙扣 #蔬菜水果挂件 #毛绒公仔批发 #娃娃机奖品 #定制毛绒玩具 #青年潮流饰品\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, giảm giá cực sốc khi mua móc khóa lông thú rau củ trái cây 🎉!\\nĐiểm nổi bật: Chất liệu lông thú cao cấp, bông PP mềm mại, cảm giác cầm tay thoải mái. Hơn 60+ mẫu mã rau củ trái cây như hành gừng tỏi, thanh long, sầu riêng - các mẫu hot tại Việt Nam, biểu cảm hài hước đáng yêu. Hỗ trợ定制 theo mẫu, đáp ứng nhu cầu cá nhân hóa, lựa chọn hoàn hảo cho máy抓娃娃 và bán sỉ.\\nTình huống sử dụng: Treo trên chùm chìa khóa để dễ tìm kiếm, làm móc treo ba lô thể hiện cá tính, trang trí xe hơi thêm thú vị, làm giải thưởng máy抓娃娃 thu hút khách hàng, và là quà tặng tinh tế cho bạn bè.\\nChi tiết sản phẩm: Chất liệu: Lông thú ngắn + Bông PP; Kích thước: 5-8cm; Cách đóng gói: Lẻ/Đóng gói riêng; Màu sắc: Gừng, thanh long, lựu, đậu nành, ổi, cà chua, sầu riêng, dưa hấu và 60+ mẫu khác; Xuất xứ: Trung Quốc; Độ tuổi phù hợp: Thanh niên 15-35 tuổi; Chứng nhận: Đạt tiêu chuẩn an toàn đồ chơi trên 14 tuổi.\\nLưu ý: Tránh tiếp xúc với vật sắc nhọn, nên giặt tay và phơi trong bóng râm, không phơi nắng trực tiếp. Trẻ nhỏ cần sử dụng dưới sự giám sát của người lớn.\\n#MocKhoaHotVietNam #TrangTriRauCu #ThúBôngSỉ #GiaiThuongMayGapThú #DoChoiLôngThúCustom #PhuKienTreEm\"\n  }\n}\n```",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 27910,
+      "apiLatency": null,
+      "processingTime": null
+    }
   }
 ]
