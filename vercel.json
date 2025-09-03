@@ -6,11 +6,23 @@
       "use": "@vercel/static"
     },
     {
+      "src": "task-manager.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "style.css",
       "use": "@vercel/static"
     },
     {
+      "src": "admin.css",
+      "use": "@vercel/static"
+    },
+    {
       "src": "script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "taskRecorder.js",
       "use": "@vercel/static"
     },
     {
@@ -27,11 +39,15 @@
       "dest": "/server.js"
     },
     {
+      "src": "/task-manager.html",
+      "dest": "/task-manager.html"
+    },
+    {
       "src": "/",
       "dest": "/index.html"
     },
     {
-      "src": "/(.*\\.(css|js))",
+      "src": "/(.*\\.(css|js|html))",
       "dest": "/$1"
     }
   ]

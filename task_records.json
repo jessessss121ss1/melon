@@ -1553,5 +1553,271 @@
       "apiLatency": null,
       "processingTime": null
     }
+  },
+  {
+    "id": "8e8aaa382775193692f567a6e1df49be",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-01T11:49:10.226Z",
+    "startedAt": "2025-09-01T11:49:10.227Z",
+    "completedAt": "2025-09-01T11:49:45.238Z",
+    "duration": 35011,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "泰迪熊玩偶小熊公仔抱抱熊毛绒玩具地摊花店布娃娃批发女生日礼物",
+    "productDescription": "所属分类：毛绒公仔\n造型类别：动物\n造型是否卡通、动漫：否\n动物分类：熊\n品牌：其他\n包装方式：网袋\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：25cm精品娃娃\n加工定制：是\n加工方式：LOGO贴牌\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以下的毛绒玩具\n颜色：笨笨熊-挂牌浅棕,笨笨熊-挂牌深棕,叽小萌,紫阳犀牛-红围巾,紫阳犀牛-蓝围巾,ZY蜜蜂驴,ZY大眼狗,ZY围巾水懒,开心鸭（单只价格颜色混搭）,酷儿松鼠（单只价格颜色混搭）,BYY围兜猫咪（单只价格颜色混搭）,丹宁兔,爱心刺猬,元气小熊（单只价格颜色混搭）,蓓蕾小狗,墩墩系列-小象,墩墩系列-粉猪,布丁兔-白色,布丁兔-棕色,田园兔-淡黄色,田园兔-浅灰色,卷卷羊-白色,卷卷羊-棕色,卷卷羊-灰色,ZY贪吃大象-粉色,ZY贪吃大象-灰色,希尼小羊-水手款,希尼小羊-围兜款,摩卡熊-深棕,摩卡熊-浅棕,摩卡兔-粉色,摩卡兔-绿色,优优兔-棕色,优优兔-绿色,动感企鹅,桃丝乐-粉色,桃丝乐-黄色,卡皮巴拉-背薯条,卡皮巴拉-背汉堡,多乐熊背带裤-海绵宝宝款,多乐熊背带裤-牛角包款,多乐熊背带裤-桃子款,多乐熊背带裤-苹果款,BYY小海豹（单只价格颜色混搭）,莓紫河马（单只价格颜色混搭）,羊娃娃-蛋糕款,羊娃娃-留恋款,羊娃娃-尿不湿款,胖丁企鹅-厨师款,胖丁企鹅-钓鱼款,胖丁企鹅-画家款\n高度：22-25cm 高品质娃娃\n适用年龄：少年（7-14岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：泰迪熊玩偶小熊公仔抱抱熊毛绒玩具地摊花店布娃娃批发女生日礼物\n - product description：所属分类：毛绒公仔\n造型类别：动物\n造型是否卡通、动漫：否\n动物分类：熊\n品牌：其他\n包装方式：网袋\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：25cm精品娃娃\n加工定制：是\n加工方式：LOGO贴牌\n是否有导购视频：是\n产地：中国\n是否外贸：是\n是否专供外贸：否\n3C配置类别：14岁以下的毛绒玩具\n颜色：笨笨熊-挂牌浅棕,笨笨熊-挂牌深棕,叽小萌,紫阳犀牛-红围巾,紫阳犀牛-蓝围巾,ZY蜜蜂驴,ZY大眼狗,ZY围巾水懒,开心鸭（单只价格颜色混搭）,酷儿松鼠（单只价格颜色混搭）,BYY围兜猫咪（单只价格颜色混搭）,丹宁兔,爱心刺猬,元气小熊（单只价格颜色混搭）,蓓蕾小狗,墩墩系列-小象,墩墩系列-粉猪,布丁兔-白色,布丁兔-棕色,田园兔-淡黄色,田园兔-浅灰色,卷卷羊-白色,卷卷羊-棕色,卷卷羊-灰色,ZY贪吃大象-粉色,ZY贪吃大象-灰色,希尼小羊-水手款,希尼小羊-围兜款,摩卡熊-深棕,摩卡熊-浅棕,摩卡兔-粉色,摩卡兔-绿色,优优兔-棕色,优优兔-绿色,动感企鹅,桃丝乐-粉色,桃丝乐-黄色,卡皮巴拉-背薯条,卡皮巴拉-背汉堡,多乐熊背带裤-海绵宝宝款,多乐熊背带裤-牛角包款,多乐熊背带裤-桃子款,多乐熊背带裤-苹果款,BYY小海豹（单只价格颜色混搭）,莓紫河马（单只价格颜色混搭）,羊娃娃-蛋糕款,羊娃娃-留恋款,羊娃娃-尿不湿款,胖丁企鹅-厨师款,胖丁企鹅-钓鱼款,胖丁企鹅-画家款\n高度：22-25cm 高品质娃娃\n适用年龄：少年（7-14岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "```json\n{\n  \"title\": {\n    \"chinese\": \"泰迪熊毛绒玩偶公仔抱抱熊，越南热销款，高品质PP棉填充，儿童礼物生日礼品\",\n    \"target\": \"Gấu bông Teddy cao cấp, thú nhồi bông mềm mại, chất liệu bông PP chất lượng cao, quà tặng sinh nhật cho trẻ em\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买即享越南专线物流快速送达🚚！\\n核心亮点：采用优质短毛绒面料，手感柔软亲肤不掉毛；高品质PP棉填充，饱满有弹性不易变形；多种可爱造型设计，包括泰迪熊、小动物系列等，满足不同喜好；通过安全认证，适合儿童使用，送礼自用皆宜。\\n使用场景：可作为儿童生日礼物、节日惊喜；放在床头作为陪伴玩偶；装饰儿童房间增添温馨氛围；作为花店、礼品店的热销商品；地摊经济的明星产品。\\n商品详情：尺寸：22-25cm；材质：短毛绒+PP棉填充；包装：网袋包装（支持LOGO贴牌定制）；颜色：多种可选包括浅棕泰迪熊、深棕泰迪熊、小动物系列等30+款式；适用年龄：7-14岁少年；产地：中国；认证：符合儿童玩具安全标准。\\n注意事项：建议手洗，避免机洗导致变形；请勿靠近火源；如有轻微掉毛属正常现象，拍打后即可改善；不同批次的颜色可能存在细微差异。\\n#泰迪熊玩偶 #毛绒公仔 #儿童礼物 #越南热销 #生日礼品 #安全认证\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, đặt hàng ngay để nhận giao hàng nhanh chóng qua tuyến vận chuyển Việt Nam 🚚!\\nĐiểm nổi bật: Chất liệu lông ngắn cao cấp, mềm mại, không gây kích ứng da và không rụng lông; Bông PP chất lượng cao, đầy đặn và đàn hồi, khó biến dạng; Thiết kế đa dạng với nhiều hình dáng đáng yêu bao gồm gấu Teddy và các loại động vật nhỏ; Được chứng nhận an toàn, phù hợp cho trẻ em, thích hợp làm quà tặng hoặc sử dụng cá nhân.\\nKhu vực sử dụng: Làm quà sinh nhật hoặc quà tặng dịp lễ cho trẻ em; Đặt trên giường như thú nhồi bông đồng hành; Trang trí phòng trẻ em thêm ấm cúng; Là sản phẩm bán chạy tại cửa hàng hoa và quà tặng; Sản phẩm nổi bật trong kinh doanh hàng rong.\\nChi tiết sản phẩm: Kích thước: 22-25cm; Chất liệu: Lông ngắn + bông PP; Đóng gói: Túi lưới (hỗ trợ dán nhãn LOGO tùy chỉnh); Màu sắc: Đa dạng với hơn 30 mẫu bao gồm gấu Teddy nâu nhạt, nâu đậm và các loại động vật nhỏ; Độ tuổi phù hợp: Thiếu niên 7-14 tuổi; Xuất xứ: Trung Quốc; Chứng nhận: Đáp ứng tiêu chuẩn an toàn đồ chơi trẻ em.\\nLưu ý: Khuyến nghị giặt tay, tránh giặt máy để không bị biến dạng; Không để gần nguồn lửa; Hiện tượng rụng lông nhẹ là bình thường, vỗ nhẹ để cải thiện; Màu sắc có thể khác nhau nhẹ giữa các lô hàng.\\n#GấubôngTeddy #Thúnhồibông #Quàtặngchotrẻ #BánchạytạiViệtNam #Quàsinhnhật #Chứngnhậnantoàn\"\n  }\n}\n```",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 35011,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "47342699521910356504225e8f3e1ada",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-01T11:53:33.193Z",
+    "startedAt": "2025-09-01T11:53:33.196Z",
+    "completedAt": "2025-09-01T11:54:04.706Z",
+    "duration": 31510,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "百茂正版黄油小熊入油印章挂件可爱甜品熊小挂件学生用书包挂饰礼",
+    "productDescription": "钥匙配饰分类：钥匙扣\n包装：独立包装\n材质：亚克力\n适用送礼场合：婚庆,生日,满月,旅游纪念,毕业,乔迁,派对聚会,探病慰问\n是否专利货源：否\n颜色：黄油小熊入油印章挂件\n规格：OPP袋包装\n适用送礼关系：晚辈,情侣,夫妻,同事,朋友,长辈,孩子,同学,恩师\n送礼用途：积分换购礼品,商务礼品,广告礼品,促销赠品,会议礼品,福利礼品,节庆礼品,嘉奖纪念,公关礼品\n是否属于礼品：是，商务礼品\n是否IP授权：是\nIP授权类型：动漫游戏\n风格：卡通\nIP名称：黄油小熊\n适用节日：通用,圣诞节,情人节,春节,父亲节,母亲节,教师节,元旦,七夕,万圣节,复活节,国庆节,儿童节,妇女节",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：百茂正版黄油小熊入油印章挂件可爱甜品熊小挂件学生用书包挂饰礼\n - product description：钥匙配饰分类：钥匙扣\n包装：独立包装\n材质：亚克力\n适用送礼场合：婚庆,生日,满月,旅游纪念,毕业,乔迁,派对聚会,探病慰问\n是否专利货源：否\n颜色：黄油小熊入油印章挂件\n规格：OPP袋包装\n适用送礼关系：晚辈,情侣,夫妻,同事,朋友,长辈,孩子,同学,恩师\n送礼用途：积分换购礼品,商务礼品,广告礼品,促销赠品,会议礼品,福利礼品,节庆礼品,嘉奖纪念,公关礼品\n是否属于礼品：是，商务礼品\n是否IP授权：是\nIP授权类型：动漫游戏\n风格：卡通\nIP名称：黄油小熊\n适用节日：通用,圣诞节,情人节,春节,父亲节,母亲节,教师节,元旦,七夕,万圣节,复活节,国庆节,儿童节,妇女节\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n    \"title\": {\n        \"chinese\": \"百茂正版黄油小熊入油印章挂件，卡通可爱甜品熊钥匙扣，学生书包挂饰，多功能节日礼品\",\n        \"target\": \"Móc khóa con dấu bơ gấu chính hãng Baimao, trang trí cặp sách dễ thương, quà tặng đa năng cho mọi dịp\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！限时特惠，购买正版授权黄油小熊挂件，享受甜蜜惊喜价🎁！\\n核心亮点：这款挂件采用官方正版授权，黄油小熊造型萌趣可爱，独特的入油印章设计让内部装饰流动生动。高品质亚克力材质，做工精致，耐用不易褪色。既是实用钥匙扣，又是时尚装饰品，更是传递心意的完美礼物。\\n使用场景：可挂在书包、笔袋上展现个性风格；作为钥匙扣方便日常使用；适合作为生日、毕业、情人节、圣诞节等各种节日的送礼选择；也是商务礼品、促销赠品的优质之选。\\n商品详情：材质：优质亚克力；颜色：黄油小熊入油印章款式；包装：独立OPP袋包装；适用场合：婚庆、生日、毕业、派对、节日庆祝等；适用对象：学生、朋友、情侣、家人、同事；授权类型：动漫游戏正版授权；风格：卡通可爱。\\n注意事项：避免与尖锐物品摩擦以免划伤表面；清洁时请用软布轻轻擦拭；内含液体装饰，请勿拆解或用力挤压。\\n#正版黄油小熊 #入油印章挂件 #卡通钥匙扣 #学生书包挂饰 #节日礼物 #商务礼品 #越南热销\",\n        \"target\": \"Chào mừng bạn! Ưu đãi đặc biệt trong thời gian giới hạn, mua ngay móc khóa gấu bơ chính hãng với giá siêu bất ngờ🎁!\\nĐiểm nổi bật: Sản phẩm được ủy quyền chính thức, thiết kế gấu bơ dễ thương với con dấu có dầu di chuyển sinh động bên trong. Chất liệu acrylic cao cấp, chế tác tinh xảo, bền màu theo thời gian. Vừa là móc khóa tiện dụng, vừa là phụ kiện thời trang, và là món quà ý nghĩa cho mọi dịp.\\nKhu vực sử dụng: Treo trên cặp sách, hộp bút để thể hiện phong cách cá nhân; làm móc khóa sử dụng hàng ngày; phù hợp làm quà tặng sinh nhật, tốt nghiệp, Valentine, Giáng sinh; cũng là lựa chọn hoàn hảo cho quà tặng doanh nghiệp, quà khuyến mãi.\\nChi tiết sản phẩm: Chất liệu: Acrylic cao cấp; Màu sắc: Thiết kế con dấu dầu gấu bơ; Đóng gói: Túi OPP riêng biệt; Dịp sử dụng: Cưới hỏi, sinh nhật, tốt nghiệp, tiệc tùng, lễ hội; Đối tượng phù hợp: Học sinh, bạn bè, cặp đôi, gia đình, đồng nghiệp; Loại ủy quyền: Ủy quyền chính thức anime và trò chơi; Phong cách: Hoạt hình dễ thương.\\nLưu ý: Tránh tiếp xúc với vật sắc nhọn để không trầy xước bề mặt; Vệ sinh bằng khăn mềm; Có trang trí chất lỏng bên trong, không tháo rời hoặc ép mạnh.\\n#GấuBơChínhHãng #MócKhóaConDấuDầu #MócKhóaHoạtHình #TrangTríCặpSách #QuàTặngDịpLễ #QuàTặngDoanhNghiệp #BánChạyTạiViệtNam\"\n    }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 31510,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "d7d3f7f9d3f4f8dbd162fb6f2954e4ce",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-01T11:54:25.174Z",
+    "startedAt": "2025-09-01T11:54:25.177Z",
+    "completedAt": "2025-09-01T11:55:08.209Z",
+    "duration": 43032,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "黄油小熊入油印章挂件可爱甜品熊小挂件学生用书包挂饰礼",
+    "productDescription": "钥匙配饰分类：钥匙扣\n包装：独立包装\n材质：亚克力\n适用送礼场合：婚庆,生日,满月,旅游纪念,毕业,乔迁,派对聚会,探病慰问\n是否专利货源：否\n颜色：黄油小熊入油印章挂件\n规格：OPP袋包装\n适用送礼关系：晚辈,情侣,夫妻,同事,朋友,长辈,孩子,同学,恩师\n送礼用途：积分换购礼品,商务礼品,广告礼品,促销赠品,会议礼品,福利礼品,节庆礼品,嘉奖纪念,公关礼品\n是否属于礼品：是，商务礼品\n是否IP授权：是\nIP授权类型：动漫游戏\n风格：卡通\nIP名称：黄油小熊\n适用节日：通用,圣诞节,情人节,春节,父亲节,母亲节,教师节,元旦,七夕,万圣节,复活节,国庆节,儿童节,妇女节",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：黄油小熊入油印章挂件可爱甜品熊小挂件学生用书包挂饰礼\n - product description：钥匙配饰分类：钥匙扣\n包装：独立包装\n材质：亚克力\n适用送礼场合：婚庆,生日,满月,旅游纪念,毕业,乔迁,派对聚会,探病慰问\n是否专利货源：否\n颜色：黄油小熊入油印章挂件\n规格：OPP袋包装\n适用送礼关系：晚辈,情侣,夫妻,同事,朋友,长辈,孩子,同学,恩师\n送礼用途：积分换购礼品,商务礼品,广告礼品,促销赠品,会议礼品,福利礼品,节庆礼品,嘉奖纪念,公关礼品\n是否属于礼品：是，商务礼品\n是否IP授权：是\nIP授权类型：动漫游戏\n风格：卡通\nIP名称：黄油小熊\n适用节日：通用,圣诞节,情人节,春节,父亲节,母亲节,教师节,元旦,七夕,万圣节,复活节,国庆节,儿童节,妇女节\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"黄油小熊入油印章亚克力挂件，可爱卡通动漫授权，多功能送礼佳品\",\n    \"target\": \"Móc Khóa Con Gấu Bơ Dầu Con Dấu, Đáng Yêu Phong Cách Hoạt Hình, Quà Tặng Đa Năng\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时优惠，购买即享惊喜折扣，快来把可爱的黄油小熊带回家吧 🐻✨！\\n核心亮点：这款挂件采用高品质亚克力材质，印有超萌的黄油小熊入油图案，细节精致，色彩鲜艳。作为正版动漫授权产品，品质有保障，极具收藏价值。它不仅是一个挂件，更是一个小巧的印章，趣味性与实用性兼备，绝对是让人爱不释手的创意小物。\\n使用场景：可以挂在书包、笔袋或钥匙上，随时随地展现你的可爱个性；也是各种节日的完美礼物，无论是生日、情人节、圣诞节还是春节，送给同学、朋友、情侣或家人，都能传递你的浓浓心意，适用于多种送礼场合和关系。\\n商品详情：材质：优质亚克力；颜色：黄油小熊入油印章图案；规格：独立OPP袋包装；包装方式：独立包装；适用场合：婚庆、生日、满月、旅游纪念、毕业、乔迁、派对聚会、探病慰问等；适用节日：通用、圣诞节、情人节、春节、元旦、七夕等；适用人群：学生、青年、儿童；授权类型：动漫游戏正版授权。\\n注意事项：本品为亚克力材质，请避免与尖锐物品碰撞或从高处跌落，以防刮花或碎裂。请勿长时间暴露在阳光下，以免变色。\\n#黄油小熊 #动漫挂件 #印章钥匙扣 #正版授权 #创意礼物 #学生礼品 #节日送礼\",\n    \"target\": \"Chào mừng bạn! Ưu đãi trong thời gian giới hạn, mua ngay để nhận được chiết khấu bất ngờ, hãy nhanh tay rước chú gấu bơ dầu đáng yêu về nhà thôi nào 🐻✨！\\nĐiểm nổi bật: Móc khóa này được làm từ chất liệu acrylic cao cấp, in hình chú gấu bơ dầu siêu dễ thương, chi tiết tinh xảo, màu sắc tươi sáng. Là sản phẩm được ủy quyền hoạt hình chính hãng, chất lượng đảm bảo, có giá trị sưu tầm cao. Nó không chỉ là một móc khóa, mà còn là một con dấu nhỏ xinh, kết hợp giữa sự thú vị và tính thực tế, chắc chắn là một món đồ sáng tạo khiến người ta mê mẩn.\\nKhu vực sử dụng: Có thể treo trên cặp sách, hộp bút hoặc chìa khóa, thể hiện cá tính đáng yêu của bạn mọi lúc mọi nơi; cũng là món quà hoàn hảo cho các dịp lễ khác nhau, cho dù là sinh nhật, Valentine, Giáng sinh hay Tết Nguyên đán, tặng cho bạn học, bạn bè, người yêu hoặc gia đình đều có thể truyền tải tình cảm nồng ấm của bạn, phù hợp với nhiều dịp tặng quà và mối quan hệ.\\nChi tiết sản phẩm: Chất liệu: Acrylic cao cấp; Màu sắc: Họa tiết con dấu gấu bơ dầu; Quy cách: Đóng gói riêng trong túi OPP; Cách đóng gói: Đóng gói riêng; Dịp sử dụng: Đám cưới, sinh nhật, đầy tháng, kỷ niệm du lịch, tốt nghiệp, tân gia, tiệc tùng, thăm người ốm, v.v.; Ngày lễ áp dụng: Phổ thông, Giáng sinh, Valentine, Tết Nguyên đán, Tết Dương lịch, Thất tịch, v.v.; Đối tượng áp dụng: Học sinh, thanh niên, trẻ em; Loại ủy quyền: Ủy quyền chính hãng hoạt hình trò chơi.\\nLưu ý: Sản phẩm này làm bằng chất liệu acrylic, vui lòng tránh va chạm với vật sắc nhọn hoặc rơi từ trên cao để tránh trầy xước hoặc vỡ. Không để tiếp xúc lâu với ánh nắng mặt trời để tránh bị phai màu.\\n#GấuBơDầu #MócKhóaHoạtHình #MócKhóaConDấu #ỦyQuyềnChínhHãng #QuàTặngSángTạo #QuàTặngHọcSinh #QuàTặngNgàyLễ\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 43032,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "e34ba903cde64ee8156dee3cc4ef3a13",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-01T11:56:07.149Z",
+    "startedAt": "2025-09-01T11:56:07.155Z",
+    "completedAt": "2025-09-01T11:56:50.117Z",
+    "duration": 42962,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "超萌可爱跑步小羊玩偶睡衣小羊毛绒公仔睡前安抚娃娃儿童生日礼物",
+    "productDescription": "所属分类：毛绒公仔\n造型类别：动物\n造型是否卡通、动漫：否\n动物分类：羊\n品牌：麦优兔\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：跑步小羊\n产地：中国\n是否外贸：是\n3C配置类别：14岁以上的玩具\n颜色：粉色小羊,蓝色小羊\n高度：35CM,45CM\n适用年龄：少年（7-14岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：超萌可爱跑步小羊玩偶睡衣小羊毛绒公仔睡前安抚娃娃儿童生日礼物\n - product description：所属分类：毛绒公仔\n造型类别：动物\n造型是否卡通、动漫：否\n动物分类：羊\n品牌：麦优兔\n包装方式：其他\n填充材质：PP棉\n毛绒分类：短毛绒\n是否多功能：否\n货号：跑步小羊\n产地：中国\n是否外贸：是\n3C配置类别：14岁以上的玩具\n颜色：粉色小羊,蓝色小羊\n高度：35CM,45CM\n适用年龄：少年（7-14岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"麦优兔超萌可爱跑步小羊毛绒公仔玩偶，儿童睡前安抚娃娃生日礼物，越南热销\",\n    \"target\": \"Thú Nhồi Bông Cừu Chạy Bộ Siêu Dễ Thương MAIYOU TU, Gấu Bông An Ủi Trẻ Em, Quà Tặng Sinh Nhật, Bán Chạy Tại Việt Nam\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，立即购买这款风靡越南的超萌小羊公仔，为您的孩子送上温暖陪伴🎁！\\n核心亮点：这款跑步小羊玩偶造型生动可爱，采用优质短毛绒面料，手感极其柔软顺滑，给予孩子温暖的触感体验。内部填充饱满PP棉，安全环保，回弹性好，不易变形。它不仅是玩偶，更是孩子睡前的最佳安抚伙伴，能有效缓解分离焦虑，陪伴孩子安心进入梦乡。\\n使用场景：非常适合作为孩子的生日礼物、节日惊喜或日常奖励；孩子睡觉时可以紧紧拥抱，获得安全感；白天也是玩耍和学习时的可爱伙伴；装饰儿童房，增添温馨童趣的氛围。\\n商品详情：品牌：麦优兔 (MAIYOU TU)；货号：跑步小羊；产地：中国；造型类别：动物（羊）；造型风格：写实；填充材质：100% PP棉；外部材质：优质短毛绒；颜色选择：粉色小羊、蓝色小羊；尺寸选择：35厘米（约）、45厘米（约）；包装方式：OPP袋透明包装；适用年龄：7岁以上儿童及青少年；安全认证：符合14岁以上玩具安全标准。\\n注意事项：本产品为毛绒制品，建议定期清洗以保持卫生。请手洗或置于洗衣袋中进行轻柔机洗，避免使用漂白剂，洗后请自然风干。避免长时间暴晒或靠近火源。请勿让婴幼儿单独玩耍，以免发生意外。\\n#跑步小羊玩偶 #毛绒公仔 #儿童安抚娃娃 #生日礼物 #越南热销 #麦优兔品牌 #写实动物玩偶\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian có hạn, hãy mua ngay chú cừu nhồi bông siêu dễ thương đang rất được ưa chuộng tại Việt Nam này, mang đến cho con bạn một người bạn đồng hành ấm áp 🎁!\\nĐiểm nổi bật: Chú cừu chạy bộ này có thiết kế sinh động và đáng yêu, được làm từ chất liệu lông bông cao cấp, mềm mại và mượt mà, mang đến cảm giác tiếp xúc ấm áp cho trẻ. Bên trong được nhồi đầy 100% bông PP, an toàn, thân thiện với môi trường, có độ đàn hồi tốt và khó biến dạng. Đây không chỉ là một món đồ chơi, mà còn là người bạn an ủi tuyệt vời nhất cho trẻ trước khi ngủ, giúp giảm bớt lo lắng khi xa cách và đồng hành cùng trẻ đi vào giấc ngủ ngon.\\nKịch bản sử dụng: Rất thích hợp làm quà tặng sinh nhật, bất ngờ trong ngày lễ hoặc phần thưởng hàng ngày cho trẻ; trẻ có thể ôm ấp khi ngủ để có cảm giác an toàn; cũng là người bạn đáng yêu khi chơi đùa và học tập vào ban ngày; trang trí phòng trẻ em, thêm không khí ấm cúng và vui nhộn.\\nChi tiết sản phẩm: Thương hiệu: MAIYOU TU; Mã sản phẩm: Cừu Chạy Bộ; Xuất xứ: Trung Quốc; Loại hình: Động vật (Cừu); Phong cách: Chân thực; Chất liệu nhồi: 100% Bông PP; Chất liệu bên ngoài: Lông bông cao cấp; Màu sắc: Cừu hồng, Cừu xanh dương; Kích thước: 35CM (khoảng), 45CM (khoảng); Cách đóng gói: Túi OPP trong suốt; Độ tuổi phù hợp: Trẻ em từ 7 tuổi trở lên và thanh thiếu niên; Chứng nhận an toàn: Phù hợp tiêu chuẩn đồ chơi cho trẻ trên 14 tuổi.\\nLưu ý: Sản phẩm này làm bằng chất liệu lông bông, nên giặt định kỳ để đảm bảo vệ sinh. Khuyến nghị giặt tay hoặc giặt máy nhẹ nhàng trong túi giặt, tránh sử dụng chất tẩy trắng, phơi khô tự nhiên. Tránh phơi nắng trực tiếp lâu hoặc để gần nguồn lửa. Không để trẻ sơ sinh chơi một mình để tránh tai nạn.\\n#ThúNhồiBôngCừuChạyBộ #GấuBông #BúpBêAnỦiChoTrẻ #QuàTặngSinhNhật #BánChạyTạiViệtNam #ThươngHiệuMaiYouTu #ThúNhồiBôngĐộngVậtChânThực\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 42962,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "92c087d7707973a3eb3f9ed3ebeacd45",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-01T11:57:58.505Z",
+    "startedAt": "2025-09-01T11:57:58.508Z",
+    "completedAt": "2025-09-01T11:58:34.134Z",
+    "duration": 35626,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "北欧可爱南瓜网红香菇沙发蒲团床头靠垫客厅装饰飘窗坐垫家居抱枕",
+    "productDescription": "材质：毛绒\n品牌：北之光\n产品类别：坐垫\n货号：香菇番茄柿子坐垫\n图案：其他\n加工定制：是\n颜色：西红柿坐垫,黄柿子坐垫,香菇坐垫\n尺寸：直径45cm\n空间：客厅,卧室,书房\n是否有版权或专利：否\n风格：现代简约\n类别：坐垫\n填充物：PP棉",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：北欧可爱南瓜网红香菇沙发蒲团床头靠垫客厅装饰飘窗坐垫家居抱枕\n - product description：材质：毛绒\n品牌：北之光\n产品类别：坐垫\n货号：香菇番茄柿子坐垫\n图案：其他\n加工定制：是\n颜色：西红柿坐垫,黄柿子坐垫,香菇坐垫\n尺寸：直径45cm\n空间：客厅,卧室,书房\n是否有版权或专利：否\n风格：现代简约\n类别：坐垫\n填充物：PP棉\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"北欧可爱南瓜香菇沙发蒲团坐垫，网红爆款，客厅卧室飘窗装饰靠垫\",\n    \"target\": \"Đệm ngồi sofa nấm hương bí ngô Bắc Âu dễ thương, hàng hot mạng xã hội, trang trí phòng khách cửa sổ\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买即享超值折扣😍！\\n核心亮点：这款创意香菇南瓜造型坐垫采用优质短毛绒面料，触感柔软舒适；内部填充高弹性PP棉，回弹力好不变形；可爱萌趣的蔬菜造型设计，为您的家居空间增添温馨与趣味；支持定制加工，满足个性化需求。\\n使用场景：可作为客厅地毯上的休闲坐垫；放置在卧室飘窗作为阅读角靠垫；摆放在书房作为装饰性坐垫；儿童房玩耍时的安全坐垫；朋友聚会时的额外座位。\\n商品详情：材质：优质短毛绒；品牌：北之光；货号：香菇番茄柿子坐垫；图案：蔬菜卡通造型；加工定制：支持；颜色：西红柿红/黄柿子黄/香菇棕；尺寸：直径45cm；适用空间：客厅、卧室、书房；风格：现代简约北欧风；填充物：高密度PP棉；包装：独立透明包装。\\n注意事项：建议手洗或轻柔机洗，避免暴晒和漂白；请远离尖锐物品以免划伤表面；定期拍打保持蓬松度；儿童使用时建议成人陪同。\\n#北欧风坐垫 #香菇抱枕 #蔬菜造型坐垫 #客厅装饰 #飘窗坐垫 #网红家居 #定制坐垫\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, giảm giá cực sốc khi mua ngay 😍！\\nĐiểm nổi bật: Đệm ngồi hình nấm hương và bí ngô sáng tạo được làm từ chất liệu lông ngắn cao cấp, mềm mại và dễ chịu; bên trong nhồi bông PP đàn hồi cao, không biến dạng; thiết kế hình rau củ dễ thương ngộ nghĩnh, tăng thêm sự ấm áp và thú vị cho không gian sống; hỗ trợ gia công tùy chỉnh theo nhu cầu cá nhân.\\nKịch bản sử dụng: Làm đệm ngồi thư giãn trên thảm phòng khách; đặt ở cửa sổ phòng ngủ làm đệm tựa góc đọc sách; trang trí trong phòng sách làm đệm ngồi; đệm an toàn cho trẻ em vui chơi; chỗ ngồi bổ sung khi tụ tập bạn bè.\\nChi tiết sản phẩm: Chất liệu: Lông ngắn cao cấp; Thương hiệu: Bắc Quang; Mã sản phẩm: Đệm nấm hương cà chua hồng; Họa tiết: Hình rau củ hoạt hình; Gia công tùy chỉnh: Có; Màu sắc: Đỏ cà chua/Vàng hồng vàng/Nâu nấm hương; Kích thước: Đường kính 45cm; Không gian phù hợp: Phòng khách, phòng ngủ, phòng sách; Phong cách: Bắc Âu hiện đại tối giản; Chất liệu nhồi: Bông PP mật độ cao; Đóng gói: Bao bì trong suốt riêng lẻ.\\nLưu ý: Khuyến nghị giặt tay hoặc giặt máy nhẹ nhàng, tránh phơi nắng trực tiếp và tẩy trắng; Tránh xa các vật sắc nhọn để không làm trầy xước bề mặt; Đập thường xuyên để giữ độ bông; Nên có người lớn giám sát khi trẻ em sử dụng.\\n#ĐệmngồiBắcÂu #Gốinấmhương #Đệmngồihìnhraucủ #Trangtríphòngkhách #Đệmngồicửasổ #Nộithấthot #Đệmtùychỉnh\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 35626,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "7a99c042f24869237bb57aaf35f0a829",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-03T13:01:30.283Z",
+    "startedAt": "2025-09-03T13:01:30.286Z",
+    "completedAt": "2025-09-03T13:01:57.201Z",
+    "duration": 26915,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "木制儿童颜色配对叠叠乐感官启蒙形状感知配对积木益智力串珠玩具",
+    "productDescription": "材质：木制\n规格：18.5*18.5*5.5cm\n品牌：mzl\n包装方式：彩盒\n能力培养：智力开发,动手动脑,抓握,其他能力培养,互动玩具,兴趣培养\n串珠类别：串珠\n3C配置类别：14岁以下的木制玩具\n颜色：颜色配对叠叠乐\n适用年龄：儿童（4-6岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：木制儿童颜色配对叠叠乐感官启蒙形状感知配对积木益智力串珠玩具\n - product description：材质：木制\n规格：18.5*18.5*5.5cm\n品牌：mzl\n包装方式：彩盒\n能力培养：智力开发,动手动脑,抓握,其他能力培养,互动玩具,兴趣培养\n串珠类别：串珠\n3C配置类别：14岁以下的木制玩具\n颜色：颜色配对叠叠乐\n适用年龄：儿童（4-6岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "```json\n{\n  \"title\": {\n    \"chinese\": \"Mzl木制儿童颜色配对叠叠乐感官启蒙玩具，智力开发形状感知串珠积木，4-6岁幼儿早教\",\n    \"target\": \"Đồ chơi gỗ xâu hạt phân biệt màu sắc Mzl, Khối gỗ xếp chồng giáo dục cảm quan cho bé 4-6 tuổi\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎来到我们的店铺！现在购买这款优质木制早教玩具，享受特别优惠🎉！\\n\\n核心亮点：✨ 采用天然木材制作，表面光滑无毛刺，安全环保，呵护宝宝健康。✨ 专为4-6岁儿童设计，通过颜色配对、形状识别和叠叠乐操作，有效培养孩子的感官认知能力和手眼协调能力。✨ 包含多种形状的串珠积木，激发孩子的创造力和逻辑思维能力，是智力开发的理想教具。\\n\\n使用场景：🏠 家庭早教：家长与孩子互动玩耍，增进亲子关系。🎓 幼儿园教具：适合幼儿园课堂教学使用，帮助孩子学习颜色和形状。🎁 完美礼物：作为生日礼物或节日礼物，既有趣又富有教育意义。\\n\\n商品详情：📏 尺寸：18.5*18.5*5.5cm。🎨 颜色：多彩配色，包含红、黄、蓝、绿等基础颜色。🌳 材质：优质木材，环保水性漆。📦 包装：精美彩盒包装，自用送礼都体面。👶 适用年龄：4-6岁儿童。🏭 品牌：Mzl。\\n\\n注意事项：⚠️ 本产品包含小零件，请在成人监护下使用，避免婴幼儿吞食。⚠️ 请避免长时间浸泡水中或暴晒，以保持木材质量。⚠️ 清洁时请用湿布擦拭，不要使用化学清洁剂。\\n\\n#木制早教玩具 #颜色配对积木 #感官启蒙教具 #儿童智力开发 #4-6岁幼儿玩具\",\n    \"target\": \"Chào mừng đến với cửa hàng của chúng tôi! Mua ngay đồ chơi giáo dục bằng gỗ cao cấp này để nhận ưu đãi đặc biệt 🎉!\\n\\nĐiểm nổi bật: ✨ Được làm từ gỗ tự nhiên, bề mặt nhẵn mịn không xước, an toàn và thân thiện với môi trường, bảo vệ sức khỏe bé yêu. ✨ Thiết kế chuyên biệt cho trẻ 4-6 tuổi, thông qua hoạt động phân biệt màu sắc, nhận dạng hình dạng và xếp chồng, phát triển hiệu quả khả năng nhận thức cảm quan và phối hợp tay mắt. ✨ Bao gồm các khối hạt với nhiều hình dạng đa dạng, kích thích khả năng sáng tạo và tư duy logic của trẻ, là giáo cụ lý tưởng cho phát triển trí tuệ.\\n\\nKịch bản sử dụng: 🏠 Giáo dục tại nhà: Phụ huynh tương tác vui chơi cùng con, gắn kết tình cảm gia đình. 🎓 Đồ dùng mầm non: Phù hợp cho giảng dạy tại lớp học mẫu giáo, giúp trẻ học màu sắc và hình dạng. 🎁 Quà tặng hoàn hảo: Là món quà sinh nhật hoặc ngày lễ vừa vui nhộn vừa mang tính giáo dục.\\n\\nChi tiết sản phẩm: 📏 Kích thước: 18.5*18.5*5.5cm. 🎨 Màu sắc: Phối màu đa dạng, bao gồm các màu cơ bản như đỏ, vàng, xanh dương, xanh lá. 🌳 Chất liệu: Gỗ chất lượng cao, sơn nước thân thiện môi trường. 📦 Đóng gói: Hộp màu sang trọng, phù hợp để sử dụng hoặc tặng quà. 👶 Độ tuổi phù hợp: Trẻ em 4-6 tuổi. 🏭 Thương hiệu: Mzl.\\n\\nLưu ý: ⚠️ Sản phẩm có chứa chi tiết nhỏ, cần sử dụng dưới sự giám sát của người lớn, tránh để trẻ nhỏ nuốt phải. ⚠️ Tránh ngâm nước lâu hoặc phơi nắng để duy trì chất lượng gỗ. ⚠️ Khi vệ sinh nên dùng khăn ẩm lau, không sử dụng chất tẩy rửa hóa học.\\n\\n#ĐồChơiGỗGiáoDục #KhốiGỗPhânBiệtMàu #GiáoCụCảmQuan #PhátTriểnTríTuệ #ĐồChơiChoBé4-6Tuổi\"\n  }\n}\n```",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 26915,
+      "apiLatency": null,
+      "processingTime": null
+    }
+  },
+  {
+    "id": "13098d471ac1b2de769d690e20b513d8",
+    "taskType": "generate-description",
+    "status": "completed",
+    "createdAt": "2025-09-03T13:03:27.568Z",
+    "startedAt": "2025-09-03T13:03:27.572Z",
+    "completedAt": "2025-09-03T13:03:55.456Z",
+    "duration": 27884,
+    "userId": "anonymous",
+    "sessionId": "default",
+    "retryCount": 0,
+    "errorMessage": null,
+    "productName": "跨境兔子磁性画板儿童拼图益智早教控笔训练磁力画板六一玩具礼物",
+    "productDescription": "材质：塑料/塑胶\n功能：学习训练运笔，拼图，益智早教\n类型：挂图式\n画板类型：磁性塑料画板\n3C配置类别：14岁以下的塑胶玩具\n颜色：【中号24*18*7.8cm】电商盒磁性运笔版1支笔+8张绘画卡,【大号27.5*21*8cm】电商盒磁性运笔版2支笔+10张绘画卡双面,【加大号32.3*23.5*11.8cm】电商盒磁性运笔版2支笔+12张绘画卡双面,英文彩盒【跨境英文版】【大号21.3*7.2*28.2cm】磁性运笔版2支笔+10张绘画卡双面\n适用年龄：儿童（4-6岁）",
+    "targetCountry": "vietnam",
+    "modelUsed": "deepseek-v3-1-250821",
+    "modelInput": {
+      "model": "deepseek-v3-1-250821",
+      "messages": [
+        {
+          "role": "user",
+          "content": "- Role: 跨境电商运营专家\n- Background: 用户需要将国内商品发布到海外平台，需要一个完整且吸引人的商品信息框架，以促进销售并提升用户体验。\n- Profile: 你是一位经验丰富的跨境电商运营专家，精通不同国家的消费习惯和文化差异，擅长撰写吸引人的商品描述。\n- Skills: 你具备强大的文案撰写能力、市场分析能力、商品信息优化能力，能够根据目标市场调整商品信息，确保其符合当地消费者的期望。 \n- Goals: 为用户提供一个完整的商品信息框架（中文加目标国家语言两个版本），包括标题和描述两部分，其中描述包含欢迎语、核心卖点、使用场景、详细参数、注意事项以及关键词标签，以提升商品在海外市场的吸引力和销售潜力。\n- Constrains: 商品信息需符合目标国家的文化和消费习惯，避免文化冲突，同时确保信息的准确性和完整性。\n\n- Workflow:\n-- 标题生成流程\n核心关键词 + 属性词/特征词 + 营销词/情感词 + 适用范围/场景\n1. 核心关键词：用户搜索时最可能用到的词，是产品的本质名称。例如：连衣裙、智能手机、猫粮\n2. 属性词/特征词：描述产品的具体特征，如品牌、材质、尺寸、颜色、规格、功能等。这是提高标题精准度和差异化的关键。例如：2024新款、纯棉、华为、MAX版、5000mAh超长续航\n3. 营销词/情感词：激发购买欲望，突出优惠和稀缺性。例如：网红爆款、限时折扣、明星同款\n4. 适用范围/场景：明确目标用户和使用情境，帮助消费者自我代入。例如：夏季宽松、户外露营、送男友礼物、婴儿专用\n\n-- 描述生成流程\n以下不同维度内容需要换行进行输出，且内容应丰富详细，避免过于简短，可适当使用表情emoji增添吸引力，在撰写过程中，要根据商品类别联想用户想知道的信息，并突出这些信息：\n  1. 根据目标国家的文化和消费习惯撰写欢迎语，突出促销信息，吸引买家注意。欢迎语直接说即可，不需要标题\n  2. 核心亮点：从买家角度出发，提炼商品的亮点，强调产品解决问题的能力和优势。\n  3. 使用场景：让买家能够代入使用情境，激发购买欲望。\n  4. 商品详情：详细列出商品的参数信息，包括颜色、材质、尺寸、容量、包装等，确保信息清晰具体。\n  5. 注意事项：提醒买家注意相关事项，减少售后问题和争议。\n  6. 标签：在详情页末尾添加关键词标签，优化搜索曝光。 在详情页末尾添加关键词标签，优化搜索曝光。注意关键词前面要有#。\n\n- OutputFormat: \n1.  输出必须为**纯JSON对象**，不要有任何额外的解释、标记或前言。\n2.  JSON结构必须严格遵循以下格式：\n    {\n      \"title\": {\n        \"chinese\": \"这里填写中文标题,xxxx\",\n        \"target\": \"Here is the title in target language\"\n      },\n      \"description\": {\n        \"chinese\": \"这里填写详细的中文描述,xxxx,，需按逻辑要点分点陈述\", \n        \"target\": \"Here is the detailed description in target language,xxxx，需按逻辑要点分点陈述\"\n      }\n    }\n\n- Constrains\n1. chinese里面所有内容都是中文，包括标题和内容，不允许出现英文\n2. target里面所有内容都是对应国家的语言，不允许出现英文和中文\n\n- Example：\n{\n    \"title\": {\n        \"chinese\": \"创意蔬菜搞怪表情毛绒挂件钥匙扣，网红爆款，青年适用\",\n        \"target\": \"Trang trí khóa cục lông bông hình trái cây rau củ độc đáo, hàng bán chạy, dành cho thanh niên\"\n    },\n    \"description\": {\n        \"chinese\": \"欢迎光临！现在购买创意蔬菜搞怪表情毛绒挂件钥匙扣，享受超值优惠😜！\\n核心亮点：这些挂件造型独特，以蔬菜和水果为原型，搞怪的表情十分可爱，能为你的生活增添趣味。填充PP棉，短毛绒材质，手感柔软舒适。还支持来样定制，满足你的个性化需求。\\n使用场景：可以挂在钥匙上，让你的钥匙更有辨识度；也可以挂在包包上，作为时尚的装饰；还能放在娃娃机里，成为吸引人的奖品。\\n商品详情：颜色丰富，有姜、火龙果、石榴等多种选择；填充材质为PP棉，毛绒分类是短毛绒；包装方式有散装和独立包装；产地是中国；适用于15 - 35岁的青年。\\n注意事项：挂件为毛绒制品，避免接触尖锐物品，以免损坏。清洗时建议轻柔手洗。\\n#创意蔬菜挂件 #毛绒钥匙扣 #搞怪表情 #来样定制 #青年适用\",\n        \"target\": \"Chào mừng bạn đến với cửa hàng! Khi mua trang trí khóa cục lông bông hình trái cây rau củ độc đáo này, bạn sẽ được享受 ưu đãi cực lớn 😜!\\nĐiểm nổi bật: Các trang trí này có hình dáng độc đáo, lấy trái cây và rau củ làm mẫu, với các biểu情 điên điển rất dễ thương, giúp thêm sự thú vị cho cuộc sống của bạn. Được bọc bông PP, chất liệu lông bông ngắn, cảm giác khi cầm rất mềm mại và thoải mái. Ngoài ra, chúng tôi còn hỗ trợ làm theo mẫu, đáp ứng nhu cầu cá nhân của bạn.\\nKhu vực sử dụng: Bạn có thể treo chúng vào chìa khóa, giúp chìa khóa của bạn dễ nhận biết hơn; hoặc treo vào túi xách, làm trang trí thời trang; còn có thể đặt trong máy抓娃娃, trở thành giải thưởng hấp dẫn.\\nChi tiết sản phẩm: Có nhiều màu sắc, bao gồm gừng, thanh long, lựu và nhiều lựa chọn khác; chất liệu bọc là bông PP, loại lông bông ngắn; cách đóng gói có cả lô và gói độc lập; xuất xứ từ Trung Quốc; phù hợp cho thanh niên từ 15 - 35 tuổi.\\nLưu ý: Sản phẩm là đồ lông bông, tránh tiếp xúc với các vật sắc nhọn để tránh bị hỏng. Khi giặt, hãy nhẹ tay giặt bằng tay.\\n#Trang trí khóa cục rau củ độc đáo #Cục lông bông cho chìa khóa #Biểu情 điên điển #Làm theo mẫu #Phù hợp cho thanh niên\"\n    }\n}\n\n- Input：\n - product name：跨境兔子磁性画板儿童拼图益智早教控笔训练磁力画板六一玩具礼物\n - product description：材质：塑料/塑胶\n功能：学习训练运笔，拼图，益智早教\n类型：挂图式\n画板类型：磁性塑料画板\n3C配置类别：14岁以下的塑胶玩具\n颜色：【中号24*18*7.8cm】电商盒磁性运笔版1支笔+8张绘画卡,【大号27.5*21*8cm】电商盒磁性运笔版2支笔+10张绘画卡双面,【加大号32.3*23.5*11.8cm】电商盒磁性运笔版2支笔+12张绘画卡双面,英文彩盒【跨境英文版】【大号21.3*7.2*28.2cm】磁性运笔版2支笔+10张绘画卡双面\n适用年龄：儿童（4-6岁）\n - target country：vietnam\n\noutput："
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "modelOutput": {
+      "success": true,
+      "content": "{\n  \"title\": {\n    \"chinese\": \"跨境磁性画板儿童益智玩具，兔子拼图控笔训练早教画板，六一礼物爆款\",\n    \"target\": \"Bảng vẽ từ tính thỏ cho bé, đồ chơi giáo dục thông minh, luyện kỹ năng vẽ và xếp hình, quà tặng 1/6 hot\"\n  },\n  \"description\": {\n    \"chinese\": \"欢迎光临！限时特惠，购买即赠精美礼品，让您的孩子拥有一个充满创意的童年🎁！\\n核心亮点：这款磁性画板以可爱兔子造型设计，专为儿童早教开发，能有效训练孩子控笔能力和手眼协调。通过磁性拼图功能，激发孩子的想象力和创造力，是寓教于乐的完美选择。采用安全环保塑料材质，无毒无害，让孩子玩得开心，家长放心。\\n使用场景：适合4-6岁儿童在家中进行早教学习，可作为幼儿园教具使用，也是亲子互动的绝佳玩具。六一儿童节、生日派对的理想礼物，让孩子在玩乐中学习成长。\\n商品详情：材质：优质塑料/塑胶；类型：挂图式磁性画板；功能：学习训练运笔、拼图、益智早教；3C认证类别：14岁以下塑胶玩具。规格选择：【中号24*18*7.8cm】电商盒装，含1支笔+8张绘画卡；【大号27.5*21*8cm】电商盒装，含2支笔+10张双面绘画卡；【加大号32.3*23.5*11.8cm】电商盒装，含2支笔+12张双面绘画卡；【英文彩盒跨境版大号21.3*7.2*28.2cm】含2支笔+10张双面绘画卡。\\n注意事项：请在成人监护下使用，避免儿童将小零件放入口中。请勿靠近高温源，保持干燥清洁。建议定期检查画板边缘，防止刮伤。\\n#磁性画板 #益智玩具 #儿童早教 #控笔训练 #六一礼物 #兔子拼图\",\n    \"target\": \"Chào mừng quý khách! Ưu đãi đặc biệt trong thời gian giới hạn, tặng ngay quà tặng đẹp khi mua hàng, mang lại cho con bạn một tuổi thơ đầy sáng tạo 🎁!\\nĐiểm nổi bật: Bảng vẽ từ tính thiết kế hình chú thỏ dễ thương, chuyên dụng cho giáo dục sớm trẻ em, giúp rèn luyện hiệu quả khả năng cầm bút và phối hợp tay mắt của trẻ. Thông qua chức năng xếp hình từ tính, kích thích trí tưởng tượng và sáng tạo của trẻ, là lựa chọn hoàn hảo cho việc học mà chơi. Chất liệu nhựa an toàn, thân thiện với môi trường, không độc hại, giúp trẻ chơi vui vẻ và phụ huynh yên tâm.\\nKhu vực sử dụng: Phù hợp cho trẻ em 4-6 tuổi học tập tại nhà, có thể sử dụng làm đồ dùng giảng dạy mầm non, cũng là đồ chơi tuyệt vời cho tương tác gia đình. Là quà tặng lý tưởng cho ngày 1/6, sinh nhật, giúp trẻ học hỏi và phát triển trong khi chơi.\\nChi tiết sản phẩm: Chất liệu: Nhựa cao cấp/nhựa dẻo; Loại: Bảng vẽ từ tính dạng treo; Chức năng: Học tập luyện kỹ năng vẽ, xếp hình, giáo dục sớm thông minh; Chứng nhận 3C: Đồ chơi nhựa cho trẻ dưới 14 tuổi. Lựa chọn kích thước: 【Cỡ trung 24*18*7.8cm】Hộp thương mại điện tử, bao gồm 1 bút + 8 thẻ vẽ; 【Cỡ lớn 27.5*21*8cm】Hộp thương mại điện tử, bao gồm 2 bút + 10 thẻ vẽ hai mặt; 【Cỡ đại 32.3*23.5*11.8cm】Hộp thương mại điện tử, bao gồm 2 bút + 12 thẻ vẽ hai mặt; 【Hộp màu tiếng Anh cỡ lớn 21.3*7.2*28.2cm】Bao gồm 2 bút + 10 thẻ vẽ hai mặt.\\nLưu ý: Sử dụng dưới sự giám sát của người lớn, tránh để trẻ em cho các bộ phận nhỏ vào miệng. Không để gần nguồn nhiệt, giữ khô ráo và sạch sẽ. Nên kiểm tra định kỳ các cạnh của bảng vẽ để tránh trầy xước.\\n#Bảngvếtừtính #Đồchơithôngminh #Giáodụcsớm #Luyệnkỹnăngvẽ #Quàtặng1/6 #Thỏxếphình\"\n  }\n}",
+      "model": "deepseek-v3-1-250821"
+    },
+    "metrics": {
+      "responseTime": 27884,
+      "apiLatency": null,
+      "processingTime": null
+    }
   }
 ]
